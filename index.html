@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SD Negeri Model | The Illuminated Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#6f5900",
+                    "tertiary-container": "#007130",
+                    "primary-fixed": "#dbe1ff",
+                    "primary": "#003fb1",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed": "#ffe083",
+                    "secondary-fixed-dim": "#eec200",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#65f98b",
+                    "on-primary-fixed-variant": "#003dab",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "primary-container": "#1a56db",
+                    "secondary": "#735c00",
+                    "outline": "#737686",
+                    "surface-tint": "#1353d8",
+                    "inverse-surface": "#2d3133",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-container": "#d4dcff",
+                    "on-tertiary-fixed-variant": "#005321",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-surface-variant": "#434654",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#fed01b",
+                    "on-surface": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container": "#eceef0",
+                    "on-primary-fixed": "#00174d",
+                    "on-background": "#191c1e",
+                    "on-secondary-fixed": "#231b00",
+                    "on-tertiary-fixed": "#002109",
+                    "tertiary": "#005623",
+                    "tertiary-fixed": "#6bff8f",
+                    "surface": "#f7f9fb",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-fixed-dim": "#4ae176",
+                    "outline-variant": "#c3c5d7",
+                    "inverse-primary": "#b5c4ff",
+                    "surface-bright": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-transition {
+            background: linear-gradient(180deg, rgba(247, 249, 251, 0.5) 0%, rgba(242, 244, 246, 0.5) 100%);
+        }
+        .glass-hero {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-outline-variant/30 relative">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-2xl font-bold tracking-tighter text-blue-900 dark:text-blue-100 font-headline">SD Negeri Model</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-semibold tracking-tight">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1 hover:opacity-80 transition-all duration-300" data-nav-key="beranda" href="index.html">Beranda</a>
+<div class="group relative">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-blue-600 transition-all" data-nav-dropdown="profil">
+        Profil <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="sejarah" href="index.html">Sejarah</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kurikulum" href="kurikulum.html">Kurikulum</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="visi &amp; misi" href="visi_misi.html">Visi &amp; Misi</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="sambutan" href="index.html">Sambutan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="sekolah ramah anak" href="budaya_etika.html">Sekolah Ramah Anak</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kode etik guru" href="budaya_etika.html">Kode Etik Guru</a>
+</div>
+</div>
+<div class="group relative">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-blue-600 transition-all" data-nav-dropdown="sdm">
+        SDM <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="tenaga pendidik" href="tenaga_pendidik.html">Tenaga Pendidik</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kependidikan" href="tenaga_pendidik.html">Kependidikan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="keamanan" href="tenaga_pendidik.html">Keamanan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kebersihan" href="tenaga_pendidik.html">Kebersihan</a>
+</div>
+</div>
+<a class="text-on-surface-variant hover:text-blue-600 transition-all" data-nav-key="galeri" href="galery.html">Galeri</a>
+<a class="text-on-surface-variant hover:text-blue-600 transition-all" data-nav-key="kontak" href="kontak.html">Kontak</a>
+<a class="text-on-surface-variant hover:text-blue-600 transition-all" data-nav-key="pengumuman" href="pengumuman.html">Pengumuman</a>
+<div class="group relative">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-blue-600 transition-all" data-nav-dropdown="lainnya">
+        Lainnya <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="perpustakaan" href="literasi_digital.html">Perpustakaan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="buku tamu" href="layanan_informasi.html">Buku Tamu</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kalkulator" href="layanan_informasi.html">Kalkulator</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="hymne &amp; mars" href="layanan_informasi.html">Hymne &amp; Mars</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="polling" href="layanan_informasi.html">Polling</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="lapor" href="layanan_informasi.html">Lapor</a>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">search</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide hover:opacity-90 shadow-sm transition-all active:scale-95 duration-200">
+                Hubungi Kami
+            </button>
+</div>
+</div>
+
+<!-- Mobile Nav Menu -->
+<div class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t border-outline-variant shadow-xl z-40 max-h-[80vh] overflow-y-auto" id="mobile-nav-menu">
+<div class="px-6 py-4 space-y-1">
+<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Beranda</a>
+<!-- Profil -->
+<div>
+<button class="w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mobile-toggle="mob-profil">
+<span>Profil</span>
+<span class="material-symbols-outlined mobile-chevron text-sm transition-transform">expand_more</span>
+</button>
+<div class="hidden pl-4 space-y-1 mt-1" id="mob-profil">
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Sejarah</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="kurikulum.html">Kurikulum</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="visi_misi.html">Visi &amp; Misi</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Sambutan</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="budaya_etika.html">Sekolah Ramah Anak</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="budaya_etika.html">Kode Etik Guru</a>
+</div>
+</div>
+<!-- SDM -->
+<div>
+<button class="w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mobile-toggle="mob-sdm">
+<span>SDM</span>
+<span class="material-symbols-outlined mobile-chevron text-sm transition-transform">expand_more</span>
+</button>
+<div class="hidden pl-4 space-y-1 mt-1" id="mob-sdm">
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Tenaga Pendidik</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Kependidikan</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Keamanan</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Kebersihan</a>
+</div>
+</div>
+<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="galery.html">Galeri</a>
+<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="kontak.html">Kontak</a>
+<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="pengumuman.html">Pengumuman</a>
+<!-- Lainnya -->
+<div>
+<button class="w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mobile-toggle="mob-lainnya">
+<span>Lainnya</span>
+<span class="material-symbols-outlined mobile-chevron text-sm transition-transform">expand_more</span>
+</button>
+<div class="hidden pl-4 space-y-1 mt-1" id="mob-lainnya">
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="literasi_digital.html">Perpustakaan</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Buku Tamu</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Kalkulator</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Hymne &amp; Mars</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Polling</a>
+<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Lapor</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="px-6 py-8 md:py-12 max-w-7xl mx-auto">
+<div class="relative w-full aspect-[21/9] md:aspect-[21/8] rounded-[2rem] overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="vibrant school courtyard with modern architecture, diverse group of smiling Indonesian elementary students walking together in uniforms, bright sunlight with lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFwHK_AjOcehtim2uK5PxnRQsx4NK1Y0nuadZD32L5MBlULpGvCkUL7tr664weYBWSwOYCYDtO81CGhEVtVEc4ZEtCt1Gh16FMZlB1ujejpB8crhXl3pNGnd1JWFJcxjt1deLiidJzSUuxq5OTAwCJNA7zKoNfgfBSfy5TxOfCveA6xzF8xRUQahSbrNg6eOUXxShqeb9Op3BozbLHHphvpm_qfoBVF6pA3nBWIpnJzzz2h9SPwgetZMcJ3CFefDXUyTkIK1Od4mw"/>
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-900/40 to-transparent"></div>
+<div class="absolute inset-0 flex flex-col justify-center px-8 md:px-20 max-w-4xl">
+<div class="inline-flex items-center gap-2 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full mb-6 w-fit shadow-lg shadow-tertiary-container/20">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-xs font-bold uppercase tracking-widest">Growth Mindset</span>
+</div>
+<h1 class="text-white font-headline text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.2] mb-6 drop-shadow-md">
+                    The Future of <br/><span class="text-secondary-container">Excellence</span> Starts Here.
+                </h1>
+<p class="text-white/95 text-lg md:text-xl max-w-xl font-medium leading-relaxed mb-10 drop-shadow-sm">
+                    Treating information not as data, but as a curated journey of brilliance. Join Indonesia's premier model school.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg shadow-xl shadow-primary-container/30 hover:scale-105 hover:bg-primary transition-all">
+                        Enroll Your Child
+                    </button>
+<button class="glass-hero text-blue-900 px-8 py-4 rounded-xl font-headline font-bold text-lg border border-white/40 hover:bg-white/90 transition-all shadow-lg">
+                        Virtual Tour
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Links Bento Grid -->
+<section class="px-6 py-16 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-white border border-outline-variant p-8 rounded-[2rem] flex flex-col justify-between group cursor-pointer hover:border-primary hover:shadow-xl transition-all duration-300">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4">school</span>
+<h3 class="text-2xl font-headline font-extrabold text-blue-900 mb-2">Academic Pillars</h3>
+<p class="text-on-surface-variant leading-relaxed">Explore our international-standard curriculum and specialized programs that nurture global thinkers.</p>
+</div>
+<div class="mt-8 flex items-center text-primary font-bold group-hover:gap-3 transition-all">
+                    Learn More <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</div>
+</div>
+<div class="bg-secondary-fixed p-8 rounded-[2rem] flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
+<div>
+<div class="bg-white/40 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl text-on-secondary-fixed">family_restroom</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold text-on-secondary-fixed mb-2">Parent Portal</h3>
+<p class="text-on-secondary-fixed-variant text-sm mb-6">Stay connected with your child's progress and school announcements.</p>
+</div>
+<a class="bg-on-secondary-fixed text-secondary-fixed px-4 py-3 rounded-xl font-bold text-center hover:opacity-90 transition-opacity" href="#">Login Portal</a>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-[2rem] flex flex-col justify-between hover:bg-surface-dim transition-all">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4">event_upcoming</span>
+<h3 class="text-2xl font-headline font-extrabold text-blue-900 mb-2">Calendar</h3>
+<p class="text-sm font-medium text-on-surface-variant leading-relaxed">Keep track of upcoming exams, holidays, and vibrant school festivals.</p>
+</div>
+<button class="mt-6 flex items-center text-primary font-bold text-sm">View Schedule <span class="material-symbols-outlined text-lg ml-1">chevron_right</span></button>
+</div>
+</div>
+</section>
+<!-- Latest News Section -->
+<section class="px-6 py-24 bg-surface-container-low/40 border-y border-outline-variant/30">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<div class="md:col-span-4 lg:sticky lg:top-32">
+<h2 class="font-headline text-5xl font-black text-blue-900 leading-tight mb-6">Latest News &amp; <br/>Archives.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">Capturing the moments that define our legacy of excellence in education and character building.</p>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all group">
+                    View All Stories <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- News Card 1 -->
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group border border-outline-variant/50">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close-up of elementary student holding a trophy with a look of achievement, school background in soft blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRbPiENIDEbPQzDv-Qerd9Vw1-MjQaGY47exsPmgVxF1jMufuct8fkC8KeEuPNsknuQn7m6G9EJLzqN4wYWzwRFZvwSF9pe-La5hWPTetqGc_d2JkDiEqY1zP2uFiCmuWhUQBtXVGyJTXxDtzds-1rKiLzPPKr_-9b2qHPsflK9U3L29AA68RhjqPYZqiSPzjCWhr6Oo9jF7Ho7etG_5Q5wVLoGupvYispWVzOfNKbW9vtmAnUg3uJrkNtBjXHK-EvCDLJ8JW-HQw"/>
+</div>
+<div class="p-8">
+<span class="text-[10px] font-black text-secondary uppercase tracking-[0.2em] bg-secondary-fixed px-3 py-1 rounded-full">Excellence</span>
+<h4 class="text-xl font-headline font-bold text-blue-900 mt-4 mb-3 group-hover:text-primary transition-colors">Pemenang Olimpiade Sains Nasional 2024</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">Siswa SD Negeri Model meraih medali emas dalam kompetisi sains tingkat nasional yang diadakan di Jakarta baru-baru ini.</p>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group border border-outline-variant/50 md:mt-12">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="students participating in a traditional Indonesian dance performance on a stage with colourful costumes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLuMEIMrsL_7CIy0dV5M3TK3f8xanAVakLDTqQcMKr52xrpODUaMImEaulWTGR4BYWZB99T1dhVs0Qj7Eaz6Hujm17UZIHSYRzRfBhBb8-4u6fyVjNWWJvequYBH4lf1i6FJtkDSrgZi6JY9oBYseZ8Fn1CqW7s5AO4SJJbSFwYOXy02GyOVEu7A6Pt6oXhSGalHinCw8d1Lbkt7MvXwZ6KwcyaWTsdWg2csWD8UeGEIj2kQvQDG9abcMW8CCVmIHPhXlq222gYD8"/>
+</div>
+<div class="p-8">
+<span class="text-[10px] font-black text-tertiary uppercase tracking-[0.2em] bg-tertiary-fixed px-3 py-1 rounded-full">Culture</span>
+<h4 class="text-xl font-headline font-bold text-blue-900 mt-4 mb-3 group-hover:text-primary transition-colors">Festival Budaya Nusantara SD Model</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">Merayakan keberagaman budaya Indonesia melalui perpaduan seni tari modern dan pameran kuliner tradisional.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Timeline Section -->
+<section class="px-6 py-24 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-blue-900 tracking-tight mb-2">Academic Timeline</h2>
+<p class="text-on-surface-variant font-medium text-lg">Sync your family's journey with our school's highlights.</p>
+</div>
+<div class="flex gap-3">
+<button class="w-14 h-14 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-14 h-14 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Event 1 -->
+<div class="group flex flex-col p-8 bg-white rounded-[2rem] border border-outline-variant shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+<div class="flex items-center gap-4 mb-6">
+<div class="flex flex-col items-center bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="text-3xl font-headline font-black">14</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">OKT</span>
+</div>
+<div class="h-10 w-px bg-outline-variant"></div>
+<div class="text-on-surface-variant text-sm font-bold flex flex-col">
+<span>Senin</span>
+<span class="opacity-70">2024</span>
+</div>
+</div>
+<h5 class="text-xl font-headline font-bold text-blue-900 mb-3">Parent-Teacher Conference</h5>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-8">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>08:00 AM - 02:00 PM</span>
+</div>
+<button class="mt-auto w-fit text-primary font-bold hover:underline underline-offset-4 decoration-2">Add to Calendar</button>
+</div>
+<!-- Event 2 -->
+<div class="group flex flex-col p-8 bg-white rounded-[2rem] border border-outline-variant shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+<div class="flex items-center gap-4 mb-6">
+<div class="flex flex-col items-center bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-2xl group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="text-3xl font-headline font-black">22</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">OKT</span>
+</div>
+<div class="h-10 w-px bg-outline-variant"></div>
+<div class="text-on-surface-variant text-sm font-bold flex flex-col">
+<span>Selasa</span>
+<span class="opacity-70">2024</span>
+</div>
+</div>
+<h5 class="text-xl font-headline font-bold text-blue-900 mb-3">Field Trip: Science Museum</h5>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-8">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span>Jakarta Center</span>
+</div>
+<button class="mt-auto w-fit text-primary font-bold hover:underline underline-offset-4 decoration-2">Download Permission Slip</button>
+</div>
+<!-- Event 3 -->
+<div class="group flex flex-col p-8 bg-white rounded-[2rem] border border-outline-variant shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+<div class="flex items-center gap-4 mb-6">
+<div class="flex flex-col items-center bg-tertiary-fixed text-on-tertiary-fixed px-4 py-2 rounded-2xl group-hover:bg-tertiary group-hover:text-white transition-colors">
+<span class="text-3xl font-headline font-black">02</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">NOV</span>
+</div>
+<div class="h-10 w-px bg-outline-variant"></div>
+<div class="text-on-surface-variant text-sm font-bold flex flex-col">
+<span>Sabtu</span>
+<span class="opacity-70">2024</span>
+</div>
+</div>
+<h5 class="text-xl font-headline font-bold text-blue-900 mb-3">Batik Day Workshop</h5>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-8">
+<span class="material-symbols-outlined text-lg">palette</span>
+<span>Art Studio</span>
+</div>
+<button class="mt-auto w-fit text-primary font-bold hover:underline underline-offset-4 decoration-2">Register Interest</button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 py-24">
+<div class="max-w-7xl mx-auto bg-blue-900 rounded-[3rem] overflow-hidden relative shadow-2xl">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="relative px-8 md:px-20 py-24 flex flex-col items-center text-center">
+<h2 class="text-white font-headline text-4xl md:text-6xl font-black mb-6 max-w-4xl tracking-tighter leading-tight">Shape the Legacy of Your Child's Future.</h2>
+<p class="text-blue-100/80 text-lg md:text-xl max-w-2xl mb-12 font-medium">Experience the difference of a model education. Registration for Academic Year 2024/2025 is now open for limited slots.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-secondary-container text-on-secondary-fixed px-10 py-5 rounded-2xl font-headline font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-black/20">Get Started Today</button>
+<button class="bg-white/10 text-white border border-white/20 backdrop-blur-md px-10 py-5 rounded-2xl font-headline font-bold text-lg hover:bg-white/20 transition-all">Admission Guide</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 bg-surface-container-low border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-20">
+<div class="md:col-span-1">
+<span class="text-2xl font-black text-blue-900 mb-6 block font-headline">SD Negeri Model</span>
+<p class="text-sm leading-relaxed text-on-surface-variant max-w-xs mb-8">
+                Nurturing excellence through innovation and tradition. Dedicated to the highest standards of primary education in Indonesia.
+            </p>
+<div class="space-y-3 text-sm text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>(0341) 123456</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>info@sdnmodel.sch.id</span>
+</div>
+</div>
+<div class="flex gap-4 mt-8">
+<a class="w-10 h-10 rounded-full bg-white border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+<a class="w-10 h-10 rounded-full bg-white border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-xl">groups</span></a>
+<a class="w-10 h-10 rounded-full bg-white border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 mb-6 font-headline uppercase tracking-widest text-xs">Profil Sekolah</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Sejarah Singkat</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" data-nav-key="visi &amp; misi" href="visi_misi.html">Visi &amp; Misi</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Struktur Organisasi</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Fasilitas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 mb-6 font-headline uppercase tracking-widest text-xs">Informasi</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Pengumuman Terbaru</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Agenda Sekolah</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Penerimaan Siswa Baru</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Layanan Publik</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 mb-6 font-headline uppercase tracking-widest text-xs">Lokasi Kami</h4>
+<div class="rounded-2xl overflow-hidden mb-4 h-36 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500 shadow-sm border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="minimalist map graphic showing school location in urban context with clean design" data-location="Malang, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc011Lc4dvIB6E0NRxmgEu1uinsqR3Y2yaBaffyqGVgLIias9PPlPTN9F3n5PiuW-CDukyIkwrg_nH27VQ16FXkYSq-tTZ_H87MJtfhiJDYtcUhsrVG2toAOZf5e45qAyJFdEobxcQM46k9Uw5GnIAmALF3lgL-W5Y8YirC5PgQrReSu0nWo-TbQqjhDmI-_Mdm5Nz-Tl8fzwIyt33b9PICbkaQ3tpohsOPUhENJpX2sxmbwxiatA7fGu5AjYTqA3wB61PPq3BbbM"/>
+</div>
+<p class="text-sm leading-relaxed text-on-surface-variant font-medium">Jl. Contoh No. 123, Malang, Jawa Timur, Indonesia</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 pb-12">
+<div class="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="text-sm font-medium text-on-surface-variant/70">© 2024 SD Negeri Model. The Illuminated Archive.</span>
+<span class="text-[10px] font-black uppercase tracking-[0.3em] text-outline">Excellence in Every Pillar</span>
+</div>
+</div>
+</footer>
+
+<script>
+(function() {
+  // --- Active nav highlight ---
+  var page = location.pathname.split('/').pop() || 'index.html';
+  var linkMap = {
+    'index.html': {type:'direct', key:'beranda'},
+    'visi_misi.html': {type:'dropdown', key:'profil'},
+    'kurikulum.html': {type:'dropdown', key:'profil'},
+    'budaya_etika.html': {type:'dropdown', key:'profil'},
+    'tenaga_pendidik.html': {type:'dropdown', key:'sdm'},
+    'galery.html': {type:'direct', key:'galeri'},
+    'kontak.html': {type:'direct', key:'kontak'},
+    'pengumuman.html': {type:'direct', key:'pengumuman'},
+    'layanan_informasi.html': {type:'dropdown', key:'lainnya'},
+    'literasi_digital.html': {type:'dropdown', key:'lainnya'},
+  };
+  var active = linkMap[page] || {type:'direct', key:''};
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Highlight direct nav links
+    document.querySelectorAll('[data-nav-key]').forEach(function(el) {
+      var k = el.getAttribute('data-nav-key').toLowerCase();
+      if (active.type === 'direct' && k === active.key) {
+        el.classList.add('!text-primary','font-bold','border-b-2','border-primary','pb-1');
+        el.classList.remove('text-on-surface-variant','text-blue-700');
+      }
+    });
+    // Highlight dropdown parent buttons
+    document.querySelectorAll('[data-nav-dropdown]').forEach(function(el) {
+      var k = el.getAttribute('data-nav-dropdown').toLowerCase();
+      if (active.type === 'dropdown' && k === active.key) {
+        el.classList.add('!text-primary','font-bold','border-b-2','border-primary','pb-1');
+      }
+    });
+
+    // --- Mobile menu toggle ---
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-nav-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    // Mobile accordion dropdowns
+    document.querySelectorAll('[data-mobile-toggle]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = document.getElementById(btn.getAttribute('data-mobile-toggle'));
+        if (target) target.classList.toggle('hidden');
+        var icon = btn.querySelector('.mobile-chevron');
+        if (icon) icon.style.transform = target.classList.contains('hidden') ? '' : 'rotate(180deg)';
+      });
+    });
+  });
+})();
+</script>
+</body></html>
