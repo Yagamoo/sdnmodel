@@ -90,6 +90,21 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
     </style>
+<style id="sdn-nav-styles">
+  /* ── Active nav state ── */
+  [data-nav-active="1"] {
+    color: #003fb1 !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid #003fb1 !important;
+    padding-bottom: 2px !important;
+  }
+  /* ── Mobile menu slide ── */
+  #mobile-nav-menu          { display: none; }
+  #mobile-nav-menu.mob-open { display: block !important; }
+  /* Chevron rotate */
+  .mob-chevron               { transition: transform .2s ease; }
+  .mob-chevron.rotated       { transform: rotate(180deg); }
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
 <!-- TopNavBar -->
@@ -97,18 +112,18 @@
 <div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
 <div class="text-2xl font-bold tracking-tighter text-blue-900 dark:text-blue-100 font-headline">SD Negeri Model</div>
 <div class="hidden md:flex items-center space-x-8 font-headline font-semibold tracking-tight">
-<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 pb-1 hover:opacity-80 transition-all duration-300" data-nav-key="beranda" href="index.html">Beranda</a>
+<a class="hover:opacity-80 transition-all duration-300" data-nav-key="beranda" href="index.html">Beranda</a>
 <div class="group relative">
 <button class="flex items-center gap-1 text-on-surface-variant hover:text-blue-600 transition-all" data-nav-dropdown="profil">
         Profil <span class="material-symbols-outlined text-sm">expand_more</span>
 </button>
 <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="sejarah" href="index.html">Sejarah</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kurikulum" href="kurikulum.html">Kurikulum</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="visi &amp; misi" href="visi_misi.html">Visi &amp; Misi</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="sambutan" href="index.html">Sambutan</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="sekolah ramah anak" href="budaya_etika.html">Sekolah Ramah Anak</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kode etik guru" href="budaya_etika.html">Kode Etik Guru</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="index.html">Sejarah</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="kurikulum.html">Kurikulum</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="visi_misi.html">Visi &amp; Misi</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="index.html">Sambutan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="budaya_etika.html">Sekolah Ramah Anak</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="budaya_etika.html">Kode Etik Guru</a>
 </div>
 </div>
 <div class="group relative">
@@ -116,10 +131,10 @@
         SDM <span class="material-symbols-outlined text-sm">expand_more</span>
 </button>
 <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="tenaga pendidik" href="tenaga_pendidik.html">Tenaga Pendidik</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kependidikan" href="tenaga_pendidik.html">Kependidikan</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="keamanan" href="tenaga_pendidik.html">Keamanan</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kebersihan" href="tenaga_pendidik.html">Kebersihan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="tenaga_pendidik.html">Tenaga Pendidik</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="tenaga_pendidik.html">Kependidikan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="tenaga_pendidik.html">Keamanan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="tenaga_pendidik.html">Kebersihan</a>
 </div>
 </div>
 <a class="text-on-surface-variant hover:text-blue-600 transition-all" data-nav-key="galeri" href="galery.html">Galeri</a>
@@ -130,12 +145,12 @@
         Lainnya <span class="material-symbols-outlined text-sm">expand_more</span>
 </button>
 <div class="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="perpustakaan" href="literasi_digital.html">Perpustakaan</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="buku tamu" href="layanan_informasi.html">Buku Tamu</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="kalkulator" href="layanan_informasi.html">Kalkulator</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="hymne &amp; mars" href="layanan_informasi.html">Hymne &amp; Mars</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="polling" href="layanan_informasi.html">Polling</a>
-<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" data-nav-key="lapor" href="layanan_informasi.html">Lapor</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="literasi_digital.html">Perpustakaan</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="layanan_informasi.html">Buku Tamu</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="layanan_informasi.html">Kalkulator</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="layanan_informasi.html">Hymne &amp; Mars</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="layanan_informasi.html">Polling</a>
+<a class="block px-4 py-2 hover:bg-surface-container-low text-sm" href="layanan_informasi.html">Lapor</a>
 </div>
 </div>
 </div>
@@ -145,19 +160,18 @@
                 Hubungi Kami
             </button>
 </div>
-</div>
-
-<!-- Mobile Nav Menu -->
-<div class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t border-outline-variant shadow-xl z-40 max-h-[80vh] overflow-y-auto" id="mobile-nav-menu">
-<div class="px-6 py-4 space-y-1">
-<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Beranda</a>
-<!-- Profil -->
+<button aria-label="Buka menu" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-surface-container transition-colors" id="mob-menu-btn">
+<span class="material-symbols-outlined icon-menu" style="font-size:22px">menu</span>
+<span class="material-symbols-outlined icon-close hidden" style="font-size:22px">close</span>
+</button></div>
+<div class="md:hidden absolute top-full left-0 w-full bg-white border-t border-outline-variant/40 shadow-2xl z-50 max-h-[80vh] overflow-y-auto" id="mobile-nav-menu">
+<div class="px-5 py-3 space-y-0.5">
+<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="beranda" href="index.html">Beranda</a>
 <div>
-<button class="w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mobile-toggle="mob-profil">
-<span>Profil</span>
-<span class="material-symbols-outlined mobile-chevron text-sm transition-transform">expand_more</span>
+<button class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mob-toggle="mob-profil">
+<span>Profil</span><span class="material-symbols-outlined mob-chevron" style="font-size:18px">expand_more</span>
 </button>
-<div class="hidden pl-4 space-y-1 mt-1" id="mob-profil">
+<div class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-outline-variant ml-3 mb-1" id="mob-profil">
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Sejarah</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="kurikulum.html">Kurikulum</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="visi_misi.html">Visi &amp; Misi</a>
@@ -166,29 +180,25 @@
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="budaya_etika.html">Kode Etik Guru</a>
 </div>
 </div>
-<!-- SDM -->
 <div>
-<button class="w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mobile-toggle="mob-sdm">
-<span>SDM</span>
-<span class="material-symbols-outlined mobile-chevron text-sm transition-transform">expand_more</span>
+<button class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mob-toggle="mob-sdm">
+<span>SDM</span><span class="material-symbols-outlined mob-chevron" style="font-size:18px">expand_more</span>
 </button>
-<div class="hidden pl-4 space-y-1 mt-1" id="mob-sdm">
+<div class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-outline-variant ml-3 mb-1" id="mob-sdm">
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Tenaga Pendidik</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Kependidikan</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Keamanan</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Kebersihan</a>
 </div>
 </div>
-<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="galery.html">Galeri</a>
-<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="kontak.html">Kontak</a>
-<a class="block px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="pengumuman.html">Pengumuman</a>
-<!-- Lainnya -->
+<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="galeri" href="galery.html">Galeri</a>
+<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="kontak" href="kontak.html">Kontak</a>
+<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="pengumuman" href="pengumuman.html">Pengumuman</a>
 <div>
-<button class="w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mobile-toggle="mob-lainnya">
-<span>Lainnya</span>
-<span class="material-symbols-outlined mobile-chevron text-sm transition-transform">expand_more</span>
+<button class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mob-toggle="mob-lainnya">
+<span>Lainnya</span><span class="material-symbols-outlined mob-chevron" style="font-size:18px">expand_more</span>
 </button>
-<div class="hidden pl-4 space-y-1 mt-1" id="mob-lainnya">
+<div class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-outline-variant ml-3 mb-1" id="mob-lainnya">
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="literasi_digital.html">Perpustakaan</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Buku Tamu</a>
 <a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Kalkulator</a>
@@ -204,7 +214,7 @@
 <!-- Hero Section -->
 <section class="px-6 py-8 md:py-12 max-w-7xl mx-auto">
 <div class="relative w-full aspect-[21/9] md:aspect-[21/8] rounded-[2rem] overflow-hidden shadow-2xl">
-<img class="w-full h-full object-cover" data-alt="vibrant school courtyard with modern architecture, diverse group of smiling Indonesian elementary students walking together in uniforms, bright sunlight with lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFwHK_AjOcehtim2uK5PxnRQsx4NK1Y0nuadZD32L5MBlULpGvCkUL7tr664weYBWSwOYCYDtO81CGhEVtVEc4ZEtCt1Gh16FMZlB1ujejpB8crhXl3pNGnd1JWFJcxjt1deLiidJzSUuxq5OTAwCJNA7zKoNfgfBSfy5TxOfCveA6xzF8xRUQahSbrNg6eOUXxShqeb9Op3BozbLHHphvpm_qfoBVF6pA3nBWIpnJzzz2h9SPwgetZMcJ3CFefDXUyTkIK1Od4mw"/>
+<img alt="Foto sekolah SDN Model - hero 2" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=1600&amp;h=700&amp;q=80"/>
 <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-900/40 to-transparent"></div>
 <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-20 max-w-4xl">
 <div class="inline-flex items-center gap-2 bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full mb-6 w-fit shadow-lg shadow-tertiary-container/20">
@@ -275,7 +285,7 @@
 <!-- News Card 1 -->
 <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group border border-outline-variant/50">
 <div class="aspect-video overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close-up of elementary student holding a trophy with a look of achievement, school background in soft blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRbPiENIDEbPQzDv-Qerd9Vw1-MjQaGY47exsPmgVxF1jMufuct8fkC8KeEuPNsknuQn7m6G9EJLzqN4wYWzwRFZvwSF9pe-La5hWPTetqGc_d2JkDiEqY1zP2uFiCmuWhUQBtXVGyJTXxDtzds-1rKiLzPPKr_-9b2qHPsflK9U3L29AA68RhjqPYZqiSPzjCWhr6Oo9jF7Ho7etG_5Q5wVLoGupvYispWVzOfNKbW9vtmAnUg3uJrkNtBjXHK-EvCDLJ8JW-HQw"/>
+<img alt="Foto sekolah SDN Model - activity 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1546410531-bb4caa6379a2?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80"/>
 </div>
 <div class="p-8">
 <span class="text-[10px] font-black text-secondary uppercase tracking-[0.2em] bg-secondary-fixed px-3 py-1 rounded-full">Excellence</span>
@@ -286,7 +296,7 @@
 <!-- News Card 2 -->
 <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all group border border-outline-variant/50 md:mt-12">
 <div class="aspect-video overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="students participating in a traditional Indonesian dance performance on a stage with colourful costumes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLuMEIMrsL_7CIy0dV5M3TK3f8xanAVakLDTqQcMKr52xrpODUaMImEaulWTGR4BYWZB99T1dhVs0Qj7Eaz6Hujm17UZIHSYRzRfBhBb8-4u6fyVjNWWJvequYBH4lf1i6FJtkDSrgZi6JY9oBYseZ8Fn1CqW7s5AO4SJJbSFwYOXy02GyOVEu7A6Pt6oXhSGalHinCw8d1Lbkt7MvXwZ6KwcyaWTsdWg2csWD8UeGEIj2kQvQDG9abcMW8CCVmIHPhXlq222gYD8"/>
+<img alt="Foto sekolah SDN Model - dance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80"/>
 </div>
 <div class="p-8">
 <span class="text-[10px] font-black text-tertiary uppercase tracking-[0.2em] bg-tertiary-fixed px-3 py-1 rounded-full">Culture</span>
@@ -419,7 +429,7 @@
 <h4 class="font-bold text-blue-900 mb-6 font-headline uppercase tracking-widest text-xs">Profil Sekolah</h4>
 <ul class="space-y-4 text-sm font-medium">
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Sejarah Singkat</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors" data-nav-key="visi &amp; misi" href="visi_misi.html">Visi &amp; Misi</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="visi_misi.html">Visi &amp; Misi</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Struktur Organisasi</a></li>
 <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Fasilitas</a></li>
 </ul>
@@ -436,7 +446,7 @@
 <div>
 <h4 class="font-bold text-blue-900 mb-6 font-headline uppercase tracking-widest text-xs">Lokasi Kami</h4>
 <div class="rounded-2xl overflow-hidden mb-4 h-36 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500 shadow-sm border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="minimalist map graphic showing school location in urban context with clean design" data-location="Malang, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc011Lc4dvIB6E0NRxmgEu1uinsqR3Y2yaBaffyqGVgLIias9PPlPTN9F3n5PiuW-CDukyIkwrg_nH27VQ16FXkYSq-tTZ_H87MJtfhiJDYtcUhsrVG2toAOZf5e45qAyJFdEobxcQM46k9Uw5GnIAmALF3lgL-W5Y8YirC5PgQrReSu0nWo-TbQqjhDmI-_Mdm5Nz-Tl8fzwIyt33b9PICbkaQ3tpohsOPUhENJpX2sxmbwxiatA7fGu5AjYTqA3wB61PPq3BbbM"/>
+<img alt="Foto sekolah SDN Model - map" class="w-full h-full object-cover" data-location="Malang, Indonesia" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&amp;fit=crop&amp;w=400&amp;h=200&amp;q=80"/>
 </div>
 <p class="text-sm leading-relaxed text-on-surface-variant font-medium">Jl. Contoh No. 123, Malang, Jawa Timur, Indonesia</p>
 </div>
@@ -448,59 +458,78 @@
 </div>
 </div>
 </footer>
-
-<script>
-(function() {
-  // --- Active nav highlight ---
-  var page = location.pathname.split('/').pop() || 'index.html';
-  var linkMap = {
-    'index.html': {type:'direct', key:'beranda'},
-    'visi_misi.html': {type:'dropdown', key:'profil'},
-    'kurikulum.html': {type:'dropdown', key:'profil'},
-    'budaya_etika.html': {type:'dropdown', key:'profil'},
-    'tenaga_pendidik.html': {type:'dropdown', key:'sdm'},
-    'galery.html': {type:'direct', key:'galeri'},
-    'kontak.html': {type:'direct', key:'kontak'},
-    'pengumuman.html': {type:'direct', key:'pengumuman'},
-    'layanan_informasi.html': {type:'dropdown', key:'lainnya'},
-    'literasi_digital.html': {type:'dropdown', key:'lainnya'},
+<script id="sdn-nav-js">
+(function(){
+  var PAGE_MAP = {
+    "index.html":             {t:"direct",   k:"beranda"},
+    "visi_misi.html":         {t:"dropdown", k:"profil"},
+    "kurikulum.html":         {t:"dropdown", k:"profil"},
+    "budaya_etika.html":      {t:"dropdown", k:"profil"},
+    "tenaga_pendidik.html":   {t:"dropdown", k:"sdm"},
+    "galery.html":            {t:"direct",   k:"galeri"},
+    "kontak.html":            {t:"direct",   k:"kontak"},
+    "pengumuman.html":        {t:"direct",   k:"pengumuman"},
+    "layanan_informasi.html": {t:"dropdown", k:"lainnya"},
+    "literasi_digital.html":  {t:"dropdown", k:"lainnya"},
   };
-  var active = linkMap[page] || {type:'direct', key:''};
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Highlight direct nav links
-    document.querySelectorAll('[data-nav-key]').forEach(function(el) {
-      var k = el.getAttribute('data-nav-key').toLowerCase();
-      if (active.type === 'direct' && k === active.key) {
-        el.classList.add('!text-primary','font-bold','border-b-2','border-primary','pb-1');
-        el.classList.remove('text-on-surface-variant','text-blue-700');
+  function currentPage(){
+    return location.pathname.split("/").pop() || "index.html";
+  }
+
+  /* ─ Active highlight ─ */
+  function setActive(){
+    var info = PAGE_MAP[currentPage()] || {t:"direct", k:""};
+    // clear all
+    document.querySelectorAll("[data-nav-active]").forEach(function(el){
+      el.removeAttribute("data-nav-active");
+    });
+    var sel = info.t === "direct"
+      ? "[data-nav-key='" + info.k + "']"
+      : "[data-nav-dropdown='" + info.k + "']";
+    var targets = document.querySelectorAll(sel);
+    targets.forEach(function(el){ el.setAttribute("data-nav-active","1"); });
+  }
+
+  /* ─ Hamburger toggle ─ */
+  function initHamburger(){
+    var btn  = document.getElementById("mob-menu-btn");
+    var menu = document.getElementById("mobile-nav-menu");
+    if(!btn || !menu) return;
+
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      var open = menu.classList.toggle("mob-open");
+      btn.querySelector(".icon-menu").classList.toggle("hidden", open);
+      btn.querySelector(".icon-close").classList.toggle("hidden", !open);
+    });
+
+    document.addEventListener("click", function(e){
+      if(!menu.contains(e.target) && !btn.contains(e.target)){
+        menu.classList.remove("mob-open");
+        btn.querySelector(".icon-menu").classList.remove("hidden");
+        btn.querySelector(".icon-close").classList.add("hidden");
       }
     });
-    // Highlight dropdown parent buttons
-    document.querySelectorAll('[data-nav-dropdown]').forEach(function(el) {
-      var k = el.getAttribute('data-nav-dropdown').toLowerCase();
-      if (active.type === 'dropdown' && k === active.key) {
-        el.classList.add('!text-primary','font-bold','border-b-2','border-primary','pb-1');
-      }
-    });
+  }
 
-    // --- Mobile menu toggle ---
-    var menuBtn = document.getElementById('mobile-menu-btn');
-    var mobileMenu = document.getElementById('mobile-nav-menu');
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-    // Mobile accordion dropdowns
-    document.querySelectorAll('[data-mobile-toggle]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var target = document.getElementById(btn.getAttribute('data-mobile-toggle'));
-        if (target) target.classList.toggle('hidden');
-        var icon = btn.querySelector('.mobile-chevron');
-        if (icon) icon.style.transform = target.classList.contains('hidden') ? '' : 'rotate(180deg)';
+  /* ─ Mobile accordion ─ */
+  function initAccordion(){
+    document.querySelectorAll("[data-mob-toggle]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var panel   = document.getElementById(btn.getAttribute("data-mob-toggle"));
+        var chevron = btn.querySelector(".mob-chevron");
+        if(!panel) return;
+        panel.classList.toggle("hidden");
+        if(chevron) chevron.classList.toggle("rotated");
       });
     });
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+    setActive();
+    initHamburger();
+    initAccordion();
   });
 })();
 </script>
