@@ -1,538 +1,1239 @@
-<!DOCTYPE html>
-<html class="light" lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tenaga Pendidik - SDN Model Sleman</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#003fb1",
-                        "tertiary-container": "#007130",
-                        "surface-container-low": "#f2f4f6",
-                        "inverse-on-surface": "#eff1f3",
-                        "secondary-fixed-dim": "#eec200",
-                        "on-tertiary-fixed-variant": "#005321",
-                        "on-tertiary-container": "#65f98b",
-                        "on-error": "#ffffff",
-                        "surface-dim": "#d8dadc",
-                        "inverse-surface": "#2d3133",
-                        "tertiary": "#005623",
-                        "on-surface-variant": "#434654",
-                        "surface-variant": "#e0e3e5",
-                        "outline": "#737686",
-                        "surface-container-high": "#e6e8ea",
-                        "surface-container": "#eceef0",
-                        "on-secondary-container": "#6f5900",
-                        "primary-fixed-dim": "#b5c4ff",
-                        "on-background": "#191c1e",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed": "#dbe1ff",
-                        "tertiary-fixed": "#6bff8f",
-                        "surface": "#f7f9fb",
-                        "surface-container-highest": "#e0e3e5",
-                        "on-tertiary": "#ffffff",
-                        "on-secondary-fixed": "#231b00",
-                        "primary-container": "#1a56db",
-                        "on-tertiary-fixed": "#002109",
-                        "background": "#f7f9fb",
-                        "secondary-fixed": "#ffe083",
-                        "tertiary-fixed-dim": "#4ae176",
-                        "surface-tint": "#1353d8",
-                        "secondary-container": "#fed01b",
-                        "secondary": "#735c00",
-                        "on-primary-fixed": "#00174d",
-                        "error": "#ba1a1a",
-                        "inverse-primary": "#b5c4ff",
-                        "error-container": "#ffdad6",
-                        "surface-bright": "#f7f9fb",
-                        "on-primary-container": "#d4dcff",
-                        "outline-variant": "#c3c5d7",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-fixed-variant": "#003dab",
-                        "on-error-container": "#93000a",
-                        "on-secondary-fixed-variant": "#574500",
-                        "on-surface": "#191c1e",
-                        "on-primary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "fontFamily": {
-                        "headline": ["Plus Jakarta Sans"],
-                        "display": ["Plus Jakarta Sans"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    }
-                }
-            }
-        }
+<!doctype html>
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tenaga Pendidik - SDN Model Sleman</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#003fb1",
+              "tertiary-container": "#007130",
+              "surface-container-low": "#f2f4f6",
+              "inverse-on-surface": "#eff1f3",
+              "secondary-fixed-dim": "#eec200",
+              "on-tertiary-fixed-variant": "#005321",
+              "on-tertiary-container": "#65f98b",
+              "on-error": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "inverse-surface": "#2d3133",
+              tertiary: "#005623",
+              "on-surface-variant": "#434654",
+              "surface-variant": "#e0e3e5",
+              outline: "#737686",
+              "surface-container-high": "#e6e8ea",
+              "surface-container": "#eceef0",
+              "on-secondary-container": "#6f5900",
+              "primary-fixed-dim": "#b5c4ff",
+              "on-background": "#191c1e",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#dbe1ff",
+              "tertiary-fixed": "#6bff8f",
+              surface: "#f7f9fb",
+              "surface-container-highest": "#e0e3e5",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#231b00",
+              "primary-container": "#1a56db",
+              "on-tertiary-fixed": "#002109",
+              background: "#f7f9fb",
+              "secondary-fixed": "#ffe083",
+              "tertiary-fixed-dim": "#4ae176",
+              "surface-tint": "#1353d8",
+              "secondary-container": "#fed01b",
+              secondary: "#735c00",
+              "on-primary-fixed": "#00174d",
+              error: "#ba1a1a",
+              "inverse-primary": "#b5c4ff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f7f9fb",
+              "on-primary-container": "#d4dcff",
+              "outline-variant": "#c3c5d7",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#003dab",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#574500",
+              "on-surface": "#191c1e",
+              "on-primary": "#ffffff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              display: ["Plus Jakarta Sans"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
     </script>
-<style>.material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
-    }
-.signature-gradient {
-    background: linear-gradient(135deg, #003fb1 0%, #1a56db 100%)
-    }
-.editorial-shadow {
-    box-shadow: 0 12px 32px rgba(25, 28, 30, 0.06)
-    }
-.batik-overlay {
-    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuApZe9rn978EcikM3382vvrU8dYglWBQpB3r0v7eB0d0uvEC6-KkeVU24hJh3Frfsu8pBinOKWqv3u_aW5sds_Wm1G6JoqC8tiiBzQTOOsgUigRaxYrnkuTM1mC7DmK16jpyfIX9PoAuZaOI6kgOgSzCbw-bhuU31tgbHM9lp8mP0MbKkzfyom2pO-f7Ej7xRM20ILDWsWIzqHcx5TiVPvhUlCYXjV-kjfgdma3PSktJVmrnyLqGHq26erUxXMqFdQo--gKsN0hbFw);
-    opacity: 0.03
-    }</style>
-<style id="sdn-nav-styles">
-  /* ── Active nav state ── */
-  [data-nav-active="1"] {
-    color: #003fb1 !important;
-    font-weight: 700 !important;
-    border-bottom: 2px solid #003fb1 !important;
-    padding-bottom: 2px !important;
-  }
-  /* ── Mobile menu slide ── */
-  #mobile-nav-menu          { display: none; }
-  #mobile-nav-menu.mob-open { display: block !important; }
-  /* Chevron rotate */
-  .mob-chevron               { transition: transform .2s ease; }
-  .mob-chevron.rotated       { transform: rotate(180deg); }
-</style>
-</head>
-<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm relative">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<div class="font-headline font-extrabold text-2xl tracking-tight text-primary">
-                SDN Model Sleman
-            </div>
-<div class="hidden md:flex space-x-8 items-center"><a class="text-on-surface-variant hover:text-primary transition-colors font-body" data-nav-key="beranda" href="index.html">Beranda</a>
-<div class="relative group">
-<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-body" data-nav-dropdown="profil">
-        Profil <span class="material-symbols-outlined text-sm">expand_more</span>
-</button>
-<div class="absolute top-full left-0 mt-2 w-56 bg-surface-container-lowest editorial-shadow rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="index.html">Sejarah</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="kurikulum.html">Kurikulum</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="visi_misi.html">Visi &amp; Misi</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="index.html">Sambutan</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="budaya_etika.html">Sekolah Ramah Anak</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="budaya_etika.html">Kode Etik Guru</a>
-</div>
-</div>
-<div class="relative group">
-<button class="flex items-center gap-1 font-body" data-nav-dropdown="sdm">
-        SDM <span class="material-symbols-outlined text-sm">expand_more</span>
-</button>
-<div class="absolute top-full left-0 mt-2 w-48 bg-surface-container-lowest editorial-shadow rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-<a class="block px-4 py-2 hover:bg-surface-container text-primary font-bold" href="tenaga_pendidik.html">Tenaga Pendidik</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="tenaga_pendidik.html">Kependidikan</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="tenaga_pendidik.html">Keamanan</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" href="tenaga_pendidik.html">Kebersihan</a>
-</div>
-</div>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body" data-nav-key="galeri" href="galery.html">Galeri</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body" data-nav-key="kontak" href="kontak.html">Kontak</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body" data-nav-key="pengumuman" href="pengumuman.html">Pengumuman</a></div>
-<div class="relative group">
-<button class="signature-gradient text-on-primary px-6 py-2.5 rounded-md font-headline text-sm hover:opacity-90 transition-opacity flex items-center gap-2" data-nav-dropdown="lainnya">
-        Lainnya <span class="material-symbols-outlined text-sm">expand_more</span>
-</button>
-<div class="absolute top-full right-0 mt-2 w-52 bg-surface-container-lowest editorial-shadow rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors text-sm" href="literasi_digital.html">Perpustakaan</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors text-sm" href="layanan_informasi.html">Buku Tamu</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors text-sm" href="layanan_informasi.html">Kalkulator</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors text-sm" href="layanan_informasi.html">Hymne &amp; Mars</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors text-sm" href="layanan_informasi.html">Polling</a>
-<a class="block px-4 py-2 hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors text-sm" href="layanan_informasi.html">Lapor</a>
-</div>
-</div>
-<button aria-label="Buka menu" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-surface-container transition-colors" id="mob-menu-btn">
-<span class="material-symbols-outlined icon-menu" style="font-size:22px">menu</span>
-<span class="material-symbols-outlined icon-close hidden" style="font-size:22px">close</span>
-</button></div>
-<div class="md:hidden absolute top-full left-0 w-full bg-white border-t border-outline-variant/40 shadow-2xl z-50 max-h-[80vh] overflow-y-auto" id="mobile-nav-menu">
-<div class="px-5 py-3 space-y-0.5">
-<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="beranda" href="index.html">Beranda</a>
-<div>
-<button class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mob-toggle="mob-profil">
-<span>Profil</span><span class="material-symbols-outlined mob-chevron" style="font-size:18px">expand_more</span>
-</button>
-<div class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-outline-variant ml-3 mb-1" id="mob-profil">
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Sejarah</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="kurikulum.html">Kurikulum</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="visi_misi.html">Visi &amp; Misi</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="index.html">Sambutan</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="budaya_etika.html">Sekolah Ramah Anak</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="budaya_etika.html">Kode Etik Guru</a>
-</div>
-</div>
-<div>
-<button class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mob-toggle="mob-sdm">
-<span>SDM</span><span class="material-symbols-outlined mob-chevron" style="font-size:18px">expand_more</span>
-</button>
-<div class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-outline-variant ml-3 mb-1" id="mob-sdm">
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Tenaga Pendidik</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Kependidikan</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Keamanan</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="tenaga_pendidik.html">Kebersihan</a>
-</div>
-</div>
-<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="galeri" href="galery.html">Galeri</a>
-<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="kontak" href="kontak.html">Kontak</a>
-<a class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-nav-key="pengumuman" href="pengumuman.html">Pengumuman</a>
-<div>
-<button class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors" data-mob-toggle="mob-lainnya">
-<span>Lainnya</span><span class="material-symbols-outlined mob-chevron" style="font-size:18px">expand_more</span>
-</button>
-<div class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-outline-variant ml-3 mb-1" id="mob-lainnya">
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="literasi_digital.html">Perpustakaan</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Buku Tamu</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Kalkulator</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Hymne &amp; Mars</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Polling</a>
-<a class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="layanan_informasi.html">Lapor</a>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<main class="pt-24 pb-20">
-<!-- Hero Section -->
-<section class="relative px-8 pt-12 pb-24 max-w-7xl mx-auto overflow-visible">
-<div class="absolute inset-0 batik-overlay pointer-events-none"></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-<div class="lg:col-span-7">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full mb-6">
-<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span class="text-xs font-bold font-label uppercase tracking-wider">Pilar Keunggulan</span>
-</div>
-<h1 class="font-display font-extrabold text-5xl md:text-6xl text-on-surface leading-tight tracking-tight mb-6">
-                        Dedikasi Untuk <br/><span class="text-primary italic">Generasi Penerus</span>
-</h1>
-<p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl mb-8">
-                        Berkenalan dengan tim pendidik profesional SD Negeri Model Sleman. Para ahli yang tidak hanya mengajar, tetapi membimbing setiap siswa menuju potensi maksimal mereka dengan kurikulum inovatif dan pendekatan humanis.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<div class="flex items-center gap-3 bg-surface-container px-6 py-4 rounded-xl editorial-shadow">
-<span class="text-3xl font-bold text-primary font-headline">45+</span>
-<span class="text-sm text-on-surface-variant font-medium">Guru<br/>Sertifikasi</span>
-</div>
-<div class="flex items-center gap-3 bg-surface-container px-6 py-4 rounded-xl editorial-shadow">
-<span class="text-3xl font-bold text-tertiary font-headline">12</span>
-<span class="text-sm text-on-surface-variant font-medium">Tenaga<br/>Kependidikan</span>
-</div>
-</div>
-</div>
-<div class="lg:col-span-5 relative">
-<div class="relative z-10 rounded-xl overflow-hidden aspect-[4/5] editorial-shadow">
-<img alt="Foto sekolah SDN Model - teacher 4" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&amp;fit=crop&amp;w=700&amp;h=700&amp;q=80"/>
-</div>
-<div class="absolute -bottom-6 -left-6 w-48 h-48 signature-gradient rounded-xl -z-10 opacity-20"></div>
-</div>
-</div>
-</section>
-<!-- Personnel Filter & Title -->
-<section class="px-8 mb-16 max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b-2 border-surface-container-high pb-8">
-<div>
-<h2 class="font-display font-bold text-3xl text-on-surface">Direktori Tenaga Pendidik</h2>
-<p class="text-on-surface-variant mt-2">Menampilkan profil pengajar berdasarkan kompetensi akademik.</p>
-</div>
-<div class="flex gap-2">
-<button class="px-5 py-2 bg-primary text-on-primary rounded-full text-sm font-bold">Semua</button>
-<button class="px-5 py-2 hover:bg-surface-container transition-colors rounded-full text-sm font-medium text-on-surface-variant">Guru Kelas</button>
-<button class="px-5 py-2 hover:bg-surface-container transition-colors rounded-full text-sm font-medium text-on-surface-variant">Guru Mapel</button>
-<button class="px-5 py-2 hover:bg-surface-container transition-colors rounded-full text-sm font-medium text-on-surface-variant">Staf Ahli</button>
-</div>
-</div>
-</section>
-<!-- Grid Tenaga Pendidik -->
-<section class="px-8 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card 1: Kepala Sekolah -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
-<div class="relative aspect-[3/4] overflow-hidden">
-<img alt="Foto sekolah SDN Model - teacher 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&amp;fit=crop&amp;w=700&amp;h=700&amp;q=80"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-<button class="text-on-primary flex items-center gap-2 font-bold text-sm">Lihat Portfolio <span class="material-symbols-outlined">arrow_forward</span></button>
-</div>
-</div>
-<div class="p-8">
-<div class="text-primary font-bold font-label text-xs uppercase tracking-widest mb-2">Kepala Sekolah</div>
-<h3 class="font-display font-bold text-xl text-on-surface mb-3 leading-snug">Dra. Endang Wahyuni, M.Pd.</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Pakar manajemen pendidikan dengan pengalaman lebih dari 20 tahun dalam pengembangan kurikulum model.</p>
-<div class="mt-6 flex gap-3">
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-sm">mail</span>
-</div>
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-sm">link</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 2: Guru Senior -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
-<div class="relative aspect-[3/4] overflow-hidden">
-<img alt="Foto sekolah SDN Model - teacher 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?auto=format&amp;fit=crop&amp;w=700&amp;h=700&amp;q=80"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-<button class="text-on-primary flex items-center gap-2 font-bold text-sm">Lihat Portfolio <span class="material-symbols-outlined">arrow_forward</span></button>
-</div>
-</div>
-<div class="p-8">
-<div class="text-tertiary font-bold font-label text-xs uppercase tracking-widest mb-2">Koordinator Inovasi</div>
-<h3 class="font-display font-bold text-xl text-on-surface mb-3 leading-snug">Agus Setiawan, S.Pd., Gr.</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Spesialis integrasi teknologi dalam pembelajaran dasar, fokus pada metode pengajaran interaktif abad 21.</p>
-<div class="mt-6 flex gap-3">
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-sm">mail</span>
-</div>
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-sm">link</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 3: Card Layout Variation (Text Focus) -->
-<div class="bg-primary p-8 rounded-xl flex flex-col justify-between text-on-primary relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container opacity-20 rounded-full -mr-16 -mt-16"></div>
-<div>
-<span class="material-symbols-outlined text-5xl mb-6 opacity-40">format_quote</span>
-<h3 class="font-display font-bold text-2xl leading-tight mb-4">"Pendidikan adalah senjata paling ampuh untuk mengubah dunia."</h3>
-<p class="text-primary-fixed leading-relaxed">Seluruh tenaga pendidik kami berkomitmen untuk menjaga standar mutu pendidikan model yang berkelanjutan dan inklusif.</p>
-</div>
-<div class="mt-8">
-<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2">
-                            Gabung Tim Kami <span class="material-symbols-outlined text-sm">open_in_new</span>
-</button>
-</div>
-</div>
-<!-- Card 4: Bento-style half height or different look -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2 lg:col-span-1">
-<div class="p-8 border-b border-surface-container">
-<div class="flex justify-between items-start mb-4">
-<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-on-secondary-fixed">workspace_premium</span>
-</div>
-<span class="bg-tertiary-container/10 text-tertiary-container px-2 py-1 rounded text-[10px] font-bold uppercase">Guru Teladan 2023</span>
-</div>
-<h3 class="font-display font-bold text-xl text-on-surface">Siti Aminah, M.A.</h3>
-<p class="text-xs text-primary font-bold mt-1 uppercase tracking-tighter">Guru Bahasa &amp; Sastra</p>
-</div>
-<div class="p-8 bg-surface-container-low">
-<p class="text-sm text-on-surface-variant italic leading-relaxed">"Fokus saya adalah menanamkan kecintaan pada literasi sejak dini melalui storytelling dan media kreatif."</p>
-</div>
-</div>
-<!-- Card 5 -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
-<div class="p-8">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-16 h-16 rounded-full bg-surface-variant overflow-hidden">
-<div class="w-full h-full flex items-center justify-center bg-primary-fixed-dim text-primary">
-<span class="material-symbols-outlined text-3xl">person</span>
-</div>
-</div>
-<div>
-<h3 class="font-display font-bold text-lg text-on-surface">Budi Raharjo, S.Pd.</h3>
-<p class="text-xs text-on-surface-variant">Guru Pendidikan Jasmani</p>
-</div>
-</div>
-<p class="text-sm text-on-surface-variant leading-relaxed">Pembina atlet muda sekolah dengan lisensi kepelatihan nasional. Berdedikasi pada kesehatan fisik dan mental siswa.</p>
-<div class="mt-6 pt-6 border-t border-surface-container flex items-center justify-between">
-<span class="text-[10px] font-bold text-outline uppercase">Lama Mengabdi: 15 Th</span>
-<button class="text-primary hover:underline text-xs font-bold">Profil Lengkap</button>
-</div>
-</div>
-</div>
-<!-- Card 6 -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
-<div class="p-8">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-16 h-16 rounded-full bg-surface-variant overflow-hidden">
-<div class="w-full h-full flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed-variant">
-<span class="material-symbols-outlined text-3xl">science</span>
-</div>
-</div>
-<div>
-<h3 class="font-display font-bold text-lg text-on-surface">Lani Wijaya, M.Si.</h3>
-<p class="text-xs text-on-surface-variant">Guru IPA &amp; Eksperimen</p>
-</div>
-</div>
-<p class="text-sm text-on-surface-variant leading-relaxed">Mengembangkan laboratorium alam di sekolah untuk pembelajaran sains yang eksploratif dan menyenangkan.</p>
-<div class="mt-6 pt-6 border-t border-surface-container flex items-center justify-between">
-<span class="text-[10px] font-bold text-outline uppercase">Lama Mengabdi: 8 Th</span>
-<button class="text-primary hover:underline text-xs font-bold">Profil Lengkap</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Stats Section -->
-<section class="mt-24 px-8 py-20 bg-surface-container-low relative overflow-hidden">
-<div class="absolute inset-0 batik-overlay"></div>
-<div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-<div>
-<div class="text-4xl font-display font-extrabold text-primary mb-2">100%</div>
-<p class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">Kualifikasi S1/S2</p>
-</div>
-<div>
-<div class="text-4xl font-display font-extrabold text-primary mb-2">1:20</div>
-<p class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">Rasio Guru:Siswa</p>
-</div>
-<div>
-<div class="text-4xl font-display font-extrabold text-primary mb-2">15+</div>
-<p class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">Publikasi Riset</p>
-</div>
-<div>
-<div class="text-4xl font-display font-extrabold text-primary mb-2">24/7</div>
-<p class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">Pendampingan Konseling</p>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 bg-surface-container-low"><div class="max-w-7xl mx-auto px-8">
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
-<div class="lg:col-span-1">
-<div class="font-headline font-extrabold text-2xl tracking-tight text-primary mb-6">SDN Model Sleman</div>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
-                Mewujudkan ekosistem pendidikan yang unggul dalam prestasi, luhur dalam budi pekerti, dan berwawasan global melalui inovasi berkelanjutan.
-            </p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
-<span class="material-symbols-outlined text-lg">public</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
-<span class="material-symbols-outlined text-lg">share</span>
-</a>
-</div>
-</div>
-<div>
-<h4 class="font-headline font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Tautan Cepat</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Kebijakan Privasi</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Peta Situs</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Bantuan</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Penerimaan Siswa Baru</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-headline font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Informasi Publik</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="pengumuman.html">Pengumuman</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Kegiatan Sekolah</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">E-Learning</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Portal Orang Tua</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-headline font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Hubungi Kami</h4>
-<div class="space-y-4 text-sm">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
-<p class="text-on-surface-variant">Jl. Raya Tajem, Maguwoharjo, Depok, Sleman, Yogyakarta 55282</p>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary text-[20px]">phone</span>
-<p class="text-on-surface-variant">(0274) 4477223</p>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
-<p class="text-on-surface-variant">info@sdnmodelsleman.sch.id</p>
-</div>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-surface-container-high flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-on-surface-variant text-xs">© 2024 SD Negeri Model Sleman. Terakreditasi A.</p>
-<div class="flex gap-6">
-<a class="text-xs text-on-surface-variant hover:text-primary" href="#">Terms</a>
-<a class="text-xs text-on-surface-variant hover:text-primary" href="#">Privacy</a>
-<a class="text-xs text-on-surface-variant hover:text-primary" href="#">Cookies</a>
-</div>
-</div>
-</div></footer>
-<script id="sdn-nav-js">
-(function(){
-  var PAGE_MAP = {
-    "index.html":             {t:"direct",   k:"beranda"},
-    "visi_misi.html":         {t:"dropdown", k:"profil"},
-    "kurikulum.html":         {t:"dropdown", k:"profil"},
-    "budaya_etika.html":      {t:"dropdown", k:"profil"},
-    "tenaga_pendidik.html":   {t:"dropdown", k:"sdm"},
-    "galery.html":            {t:"direct",   k:"galeri"},
-    "kontak.html":            {t:"direct",   k:"kontak"},
-    "pengumuman.html":        {t:"direct",   k:"pengumuman"},
-    "layanan_informasi.html": {t:"dropdown", k:"lainnya"},
-    "literasi_digital.html":  {t:"dropdown", k:"lainnya"},
-  };
-
-  function currentPage(){
-    return location.pathname.split("/").pop() || "index.html";
-  }
-
-  /* ─ Active highlight ─ */
-  function setActive(){
-    var info = PAGE_MAP[currentPage()] || {t:"direct", k:""};
-    // clear all
-    document.querySelectorAll("[data-nav-active]").forEach(function(el){
-      el.removeAttribute("data-nav-active");
-    });
-    var sel = info.t === "direct"
-      ? "[data-nav-key='" + info.k + "']"
-      : "[data-nav-dropdown='" + info.k + "']";
-    var targets = document.querySelectorAll(sel);
-    targets.forEach(function(el){ el.setAttribute("data-nav-active","1"); });
-  }
-
-  /* ─ Hamburger toggle ─ */
-  function initHamburger(){
-    var btn  = document.getElementById("mob-menu-btn");
-    var menu = document.getElementById("mobile-nav-menu");
-    if(!btn || !menu) return;
-
-    btn.addEventListener("click", function(e){
-      e.stopPropagation();
-      var open = menu.classList.toggle("mob-open");
-      btn.querySelector(".icon-menu").classList.toggle("hidden", open);
-      btn.querySelector(".icon-close").classList.toggle("hidden", !open);
-    });
-
-    document.addEventListener("click", function(e){
-      if(!menu.contains(e.target) && !btn.contains(e.target)){
-        menu.classList.remove("mob-open");
-        btn.querySelector(".icon-menu").classList.remove("hidden");
-        btn.querySelector(".icon-close").classList.add("hidden");
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
       }
-    });
-  }
+      .signature-gradient {
+        background: linear-gradient(135deg, #003fb1 0%, #1a56db 100%);
+      }
+      .editorial-shadow {
+        box-shadow: 0 12px 32px rgba(25, 28, 30, 0.06);
+      }
+      .batik-overlay {
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuApZe9rn978EcikM3382vvrU8dYglWBQpB3r0v7eB0d0uvEC6-KkeVU24hJh3Frfsu8pBinOKWqv3u_aW5sds_Wm1G6JoqC8tiiBzQTOOsgUigRaxYrnkuTM1mC7DmK16jpyfIX9PoAuZaOI6kgOgSzCbw-bhuU31tgbHM9lp8mP0MbKkzfyom2pO-f7Ej7xRM20ILDWsWIzqHcx5TiVPvhUlCYXjV-kjfgdma3PSktJVmrnyLqGHq26erUxXMqFdQo--gKsN0hbFw);
+        opacity: 0.03;
+      }
+    </style>
+    <style id="sdn-nav-styles">
+      [data-nav-active="1"] {
+        color: #003fb1 !important;
+        font-weight: 700 !important;
+        border-bottom: 2px solid #003fb1 !important;
+        padding-bottom: 2px !important;
+      }
+      #mobile-nav-menu {
+        display: none;
+      }
+      #mobile-nav-menu.mob-open {
+        display: block !important;
+      }
+      .mob-chevron {
+        transition: transform 0.2s ease;
+      }
+      .mob-chevron.rotated {
+        transform: rotate(180deg);
+      }
+      .spmb-pulse {
+        animation: spmbPulse 2s ease-in-out infinite;
+      }
+      @keyframes spmbPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(254, 208, 27, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 0 8px rgba(254, 208, 27, 0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim">
+    <header
+      class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-xl shadow-sm border-b border-outline-variant/30 relative">
+      <div
+        class="flex justify-between items-center px-4 md:px-8 h-16 max-w-7xl mx-auto gap-4">
+        <!-- Logo -->
+        <a class="flex items-center gap-2.5 shrink-0 min-w-0" href="index.html">
+          <img
+            alt="Logo SDN Model Sleman"
+            class="h-12 w-12 shrink-0"
+            loading="lazy"
+            src="assets/logo-sd-model.png" />
+          <div
+            class="font-headline font-extrabold leading-tight text-primary hidden sm:block">
+            <span class="block text-sm md:text-base">SD Negeri Model</span>
+            <span
+              class="block text-[10px] font-medium text-on-surface-variant tracking-wide"
+              >Sleman — Terakreditasi A</span
+            >
+          </div>
+          <span
+            class="font-headline font-extrabold text-base text-primary sm:hidden"
+            >SDN Model</span
+          >
+        </a>
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-1 font-body text-sm text-on-surface-variant flex-1 justify-center">
+          <a
+            class="px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+            data-nav-key="beranda"
+            href="index.html"
+            >Beranda</a
+          >
+          <div class="relative group">
+            <button
+              class="flex items-center gap-0.5 px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+              data-nav-dropdown="profil">
+              Profil<span
+                class="material-symbols-outlined"
+                style="font-size: 16px"
+                >expand_more</span
+              >
+            </button>
+            <div
+              class="absolute left-0 top-full mt-1 w-52 bg-white shadow-xl rounded-xl border border-outline-variant/50 py-1.5 hidden group-hover:block z-50">
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="index.html"
+                ><span class="material-symbols-outlined text-base"
+                  >history_edu</span
+                >Sejarah</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="visi_misi.html"
+                ><span class="material-symbols-outlined text-base">flag</span
+                >Visi &amp; Misi</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="kurikulum.html"
+                ><span class="material-symbols-outlined text-base"
+                  >menu_book</span
+                >Kurikulum</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="index.html"
+                ><span class="material-symbols-outlined text-base"
+                  >record_voice_over</span
+                >Sambutan</a
+              >
+              <div class="my-1 border-t border-outline-variant/30"></div>
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="budaya_etika.html"
+                ><span class="material-symbols-outlined text-base"
+                  >child_care</span
+                >Sekolah Ramah Anak</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="budaya_etika.html"
+                ><span class="material-symbols-outlined text-base"
+                  >verified_user</span
+                >Kode Etik Guru</a
+              >
+            </div>
+          </div>
+          <div class="relative group">
+            <button
+              class="flex items-center gap-0.5 px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+              data-nav-dropdown="sdm">
+              SDM<span class="material-symbols-outlined" style="font-size: 16px"
+                >expand_more</span
+              >
+            </button>
+            <div
+              class="absolute left-0 top-full mt-1 w-48 bg-white shadow-xl rounded-xl border border-outline-variant/50 py-1.5 hidden group-hover:block z-50">
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="tenaga_pendidik.html"
+                ><span class="material-symbols-outlined text-base">school</span
+                >Tenaga Pendidik</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="tenaga_pendidik.html"
+                ><span class="material-symbols-outlined text-base">badge</span
+                >Kependidikan</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="tenaga_pendidik.html"
+                ><span class="material-symbols-outlined text-base"
+                  >security</span
+                >Keamanan</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="tenaga_pendidik.html"
+                ><span class="material-symbols-outlined text-base"
+                  >cleaning_services</span
+                >Kebersihan</a
+              >
+            </div>
+          </div>
+          <a
+            class="px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+            data-nav-key="galeri"
+            href="galery.html"
+            >Galeri</a
+          >
+          <a
+            class="px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+            data-nav-key="pengumuman"
+            href="pengumuman.html"
+            >Pengumuman</a
+          >
+          <a
+            class="px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+            data-nav-key="kontak"
+            href="kontak.html"
+            >Kontak</a
+          >
+          <div class="relative group">
+            <button
+              class="flex items-center gap-0.5 px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+              data-nav-dropdown="lainnya">
+              Lainnya<span
+                class="material-symbols-outlined"
+                style="font-size: 16px"
+                >expand_more</span
+              >
+            </button>
+            <div
+              class="absolute right-0 top-full mt-1 w-48 bg-white shadow-xl rounded-xl border border-outline-variant/50 py-1.5 hidden group-hover:block z-50">
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="literasi_digital.html"
+                ><span class="material-symbols-outlined text-base"
+                  >local_library</span
+                >Perpustakaan</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="layanan_informasi.html"
+                ><span class="material-symbols-outlined text-base">book</span
+                >Buku Tamu</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="layanan_informasi.html"
+                ><span class="material-symbols-outlined text-base"
+                  >calculate</span
+                >Kalkulator</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="layanan_informasi.html"
+                ><span class="material-symbols-outlined text-base"
+                  >music_note</span
+                >Hymne &amp; Mars</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="layanan_informasi.html"
+                ><span class="material-symbols-outlined text-base">poll</span
+                >Polling</a
+              >
+              <a
+                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                href="layanan_informasi.html"
+                ><span class="material-symbols-outlined text-base"
+                  >campaign</span
+                >Lapor</a
+              >
+            </div>
+          </div>
+        </nav>
+        <!-- Right: SPMB + hamburger -->
+        <div class="flex items-center gap-2 shrink-0">
+          <a
+            class="hidden md:inline-flex items-center gap-1.5 bg-secondary-container text-on-secondary-fixed px-4 py-2 rounded-lg font-headline font-bold text-sm hover:opacity-90 transition-all spmb-pulse shadow-sm"
+            href="#spmb">
+            <span
+              class="material-symbols-outlined"
+              style="
+                font-size: 16px;
+                font-variation-settings: &quot;FILL&quot; 1;
+              "
+              >school</span
+            >
+            SPMB 2025
+          </a>
+          <button
+            aria-label="Buka menu"
+            class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-surface-container transition-colors"
+            id="mob-menu-btn">
+            <span
+              class="material-symbols-outlined icon-menu"
+              style="font-size: 22px"
+              >menu</span
+            >
+            <span
+              class="material-symbols-outlined icon-close hidden"
+              style="font-size: 22px"
+              >close</span
+            >
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden absolute top-full left-0 w-full bg-white border-t border-outline-variant/30 shadow-2xl z-50 max-h-[80vh] overflow-y-auto"
+        id="mobile-nav-menu">
+        <div class="px-4 py-3">
+          <!-- SPMB Banner Mobile -->
+          <a
+            class="flex items-center gap-3 p-3 mb-3 bg-secondary-container rounded-xl font-headline font-bold text-sm text-on-secondary-fixed"
+            href="#spmb">
+            <span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >school</span
+            >
+            Daftar SPMB 2025 — Pendaftaran Dibuka!
+          </a>
+          <div class="space-y-0.5">
+            <a
+              class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+              data-nav-key="beranda"
+              href="index.html"
+              >Beranda</a
+            >
+            <div>
+              <button
+                class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+                data-mob-toggle="mob-profil">
+                <span>Profil</span
+                ><span
+                  class="material-symbols-outlined mob-chevron"
+                  style="font-size: 18px"
+                  >expand_more</span
+                >
+              </button>
+              <div
+                class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-primary/20 ml-3 mb-1"
+                id="mob-profil">
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="index.html"
+                  >Sejarah</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="visi_misi.html"
+                  >Visi &amp; Misi</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="kurikulum.html"
+                  >Kurikulum</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="index.html"
+                  >Sambutan</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="budaya_etika.html"
+                  >Sekolah Ramah Anak</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="budaya_etika.html"
+                  >Kode Etik Guru</a
+                >
+              </div>
+            </div>
+            <div>
+              <button
+                class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+                data-mob-toggle="mob-sdm">
+                <span>SDM</span
+                ><span
+                  class="material-symbols-outlined mob-chevron"
+                  style="font-size: 18px"
+                  >expand_more</span
+                >
+              </button>
+              <div
+                class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-primary/20 ml-3 mb-1"
+                id="mob-sdm">
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="tenaga_pendidik.html"
+                  >Tenaga Pendidik</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="tenaga_pendidik.html"
+                  >Kependidikan</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="tenaga_pendidik.html"
+                  >Keamanan</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="tenaga_pendidik.html"
+                  >Kebersihan</a
+                >
+              </div>
+            </div>
+            <a
+              class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+              data-nav-key="galeri"
+              href="galery.html"
+              >Galeri</a
+            >
+            <a
+              class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+              data-nav-key="pengumuman"
+              href="pengumuman.html"
+              >Pengumuman</a
+            >
+            <a
+              class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+              data-nav-key="kontak"
+              href="kontak.html"
+              >Kontak</a
+            >
+            <div>
+              <button
+                class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+                data-mob-toggle="mob-lainnya">
+                <span>Lainnya</span
+                ><span
+                  class="material-symbols-outlined mob-chevron"
+                  style="font-size: 18px"
+                  >expand_more</span
+                >
+              </button>
+              <div
+                class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-primary/20 ml-3 mb-1"
+                id="mob-lainnya">
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="literasi_digital.html"
+                  >Perpustakaan</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="layanan_informasi.html"
+                  >Buku Tamu</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="layanan_informasi.html"
+                  >Kalkulator</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="layanan_informasi.html"
+                  >Hymne &amp; Mars</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="layanan_informasi.html"
+                  >Polling</a
+                >
+                <a
+                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  href="layanan_informasi.html"
+                  >Lapor</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- TopNavBar -->
 
-  /* ─ Mobile accordion ─ */
-  function initAccordion(){
-    document.querySelectorAll("[data-mob-toggle]").forEach(function(btn){
-      btn.addEventListener("click", function(){
-        var panel   = document.getElementById(btn.getAttribute("data-mob-toggle"));
-        var chevron = btn.querySelector(".mob-chevron");
-        if(!panel) return;
-        panel.classList.toggle("hidden");
-        if(chevron) chevron.classList.toggle("rotated");
-      });
-    });
-  }
+    <main class="pt-16 pb-20">
+      <!-- Hero Section -->
+      <section
+        class="relative px-8 pt-12 pb-24 max-w-7xl mx-auto overflow-visible">
+        <div class="absolute inset-0 batik-overlay pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full mb-6">
+              <span
+                class="material-symbols-outlined text-[18px]"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >stars</span
+              >
+              <span
+                class="text-xs font-bold font-label uppercase tracking-wider"
+                >Pilar Keunggulan</span
+              >
+            </div>
+            <h1
+              class="font-display font-extrabold text-2xl md:text-4xl lg:text-5xl text-on-surface leading-tight tracking-tight mb-6">
+              Dedikasi Untuk <br /><span class="text-primary italic"
+                >Generasi Penerus</span
+              >
+            </h1>
+            <p
+              class="text-lg text-on-surface-variant leading-relaxed max-w-2xl mb-8">
+              Berkenalan dengan tim pendidik profesional SD Negeri Model Sleman.
+              Para ahli yang tidak hanya mengajar, tetapi membimbing setiap
+              siswa menuju potensi maksimal mereka dengan kurikulum inovatif dan
+              pendekatan humanis.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div
+                class="flex items-center gap-3 bg-surface-container px-6 py-4 rounded-xl editorial-shadow">
+                <span class="text-3xl font-bold text-primary font-headline"
+                  >45+</span
+                >
+                <span class="text-sm text-on-surface-variant font-medium"
+                  >Guru<br />Sertifikasi</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 bg-surface-container px-6 py-4 rounded-xl editorial-shadow">
+                <span class="text-3xl font-bold text-tertiary font-headline"
+                  >12</span
+                >
+                <span class="text-sm text-on-surface-variant font-medium"
+                  >Tenaga<br />Kependidikan</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 relative">
+            <div
+              class="relative z-10 rounded-xl overflow-hidden aspect-[4/5] editorial-shadow">
+              <img
+                alt="Foto SD Negeri Model Sleman"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=700&amp;h=700&amp;q=80" />
+            </div>
+            <div
+              class="absolute -bottom-6 -left-6 w-48 h-48 signature-gradient rounded-xl -z-10 opacity-20"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Personnel Filter & Title -->
+      <section class="px-8 mb-16 max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b-2 border-surface-container-high pb-8">
+          <div>
+            <h2 class="font-display font-bold text-3xl text-on-surface">
+              Direktori Tenaga Pendidik
+            </h2>
+            <p class="text-on-surface-variant mt-2">
+              Menampilkan profil pengajar berdasarkan kompetensi akademik.
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button
+              class="px-5 py-2 bg-primary text-on-primary rounded-full text-sm font-bold">
+              Semua
+            </button>
+            <button
+              class="px-5 py-2 hover:bg-surface-container transition-colors rounded-full text-sm font-medium text-on-surface-variant">
+              Guru Kelas
+            </button>
+            <button
+              class="px-5 py-2 hover:bg-surface-container transition-colors rounded-full text-sm font-medium text-on-surface-variant">
+              Guru Mapel
+            </button>
+            <button
+              class="px-5 py-2 hover:bg-surface-container transition-colors rounded-full text-sm font-medium text-on-surface-variant">
+              Staf Ahli
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Grid Tenaga Pendidik -->
+      <section class="px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1: Kepala Sekolah -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
+            <div class="relative aspect-[3/4] overflow-hidden">
+              <img
+                alt="Foto SD Negeri Model Sleman"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?auto=format&amp;fit=crop&amp;w=700&amp;h=700&amp;q=80" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <button
+                  class="text-on-primary flex items-center gap-2 font-bold text-sm">
+                  Lihat Portfolio
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+            <div class="p-8">
+              <div
+                class="text-primary font-bold font-label text-xs uppercase tracking-widest mb-2">
+                Kepala Sekolah
+              </div>
+              <h3
+                class="font-display font-bold text-xl text-on-surface mb-3 leading-snug">
+                Dra. Endang Wahyuni, M.Pd.
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Pakar manajemen pendidikan dengan pengalaman lebih dari 20 tahun
+                dalam pengembangan kurikulum model.
+              </p>
+              <div class="mt-6 flex gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-sm">mail</span>
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-sm">link</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2: Guru Senior -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
+            <div class="relative aspect-[3/4] overflow-hidden">
+              <img
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                data-alt="A male teacher in a sharp modern uniform interacting with a digital tablet in a bright classroom setting. The background shows ergonomic school furniture and a large window letting in soft daylight. The aesthetic is clean and modern, emphasizing the school's commitment to technology and innovation. Colors are balanced with deep primary blues and soft grey surfaces, creating a professional editorial look."
+                src="https://lh3.googleusercontent.com/aida/ADBb0ug9ISIeHfE6Rq4X4mBop2RuyT2h7EjmpAlNYIGQe14tUZlZPP5LGDo1O85t3-i0QPP6aIHSd3kxaLmuojDewyVs2ndmhLV8CzamHCFvvTTqzJAB-aahbgyt92ev3IgTF09DpxrftML6XPXkXgMEZk6vt6H6r8BViFNpuuc4XYHT8qwhAE9WnWNnjQhbtgczK-jRpPADX91gBX9jY2zn0Az4Xq7xK6c1k-YCjV7fv5gSUiJIHanS2G9oTNqWiGnk6H1N5HBGFWmDSA" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <button
+                  class="text-on-primary flex items-center gap-2 font-bold text-sm">
+                  Lihat Portfolio
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+            <div class="p-8">
+              <div
+                class="text-tertiary font-bold font-label text-xs uppercase tracking-widest mb-2">
+                Koordinator Inovasi
+              </div>
+              <h3
+                class="font-display font-bold text-xl text-on-surface mb-3 leading-snug">
+                Agus Setiawan, S.Pd., Gr.
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Spesialis integrasi teknologi dalam pembelajaran dasar, fokus
+                pada metode pengajaran interaktif abad 21.
+              </p>
+              <div class="mt-6 flex gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-sm">mail</span>
+                </div>
+                <div
+                  class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-sm">link</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3: Card Layout Variation (Text Focus) -->
+          <div
+            class="bg-primary p-8 rounded-xl flex flex-col justify-between text-on-primary relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-primary-container opacity-20 rounded-full -mr-16 -mt-16"></div>
+            <div>
+              <span class="material-symbols-outlined text-5xl mb-6 opacity-40"
+                >format_quote</span
+              >
+              <h3 class="font-display font-bold text-2xl leading-tight mb-4">
+                "Pendidikan adalah senjata paling ampuh untuk mengubah dunia."
+              </h3>
+              <p class="text-primary-fixed leading-relaxed">
+                Seluruh tenaga pendidik kami berkomitmen untuk menjaga standar
+                mutu pendidikan model yang berkelanjutan dan inklusif.
+              </p>
+            </div>
+            <div class="mt-8">
+              <button
+                class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2">
+                Gabung Tim Kami
+                <span class="material-symbols-outlined text-sm"
+                  >open_in_new</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Card 4: Bento-style half height or different look -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2 lg:col-span-1">
+            <div class="p-8 border-b border-surface-container">
+              <div class="flex justify-between items-start mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
+                  <span
+                    class="material-symbols-outlined text-on-secondary-fixed"
+                    >workspace_premium</span
+                  >
+                </div>
+                <span
+                  class="bg-tertiary-container/10 text-tertiary-container px-2 py-1 rounded text-[10px] font-bold uppercase"
+                  >Guru Teladan 2023</span
+                >
+              </div>
+              <h3 class="font-display font-bold text-xl text-on-surface">
+                Siti Aminah, M.A.
+              </h3>
+              <p
+                class="text-xs text-primary font-bold mt-1 uppercase tracking-tighter">
+                Guru Bahasa &amp; Sastra
+              </p>
+            </div>
+            <div class="p-8 bg-surface-container-low">
+              <p class="text-sm text-on-surface-variant italic leading-relaxed">
+                "Fokus saya adalah menanamkan kecintaan pada literasi sejak dini
+                melalui storytelling dan media kreatif."
+              </p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-surface-variant overflow-hidden">
+                  <div
+                    class="w-full h-full flex items-center justify-center bg-primary-fixed-dim text-primary">
+                    <span class="material-symbols-outlined text-3xl"
+                      >person</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-lg text-on-surface">
+                    Budi Raharjo, S.Pd.
+                  </h3>
+                  <p class="text-xs text-on-surface-variant">
+                    Guru Pendidikan Jasmani
+                  </p>
+                </div>
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Pembina atlet muda sekolah dengan lisensi kepelatihan nasional.
+                Berdedikasi pada kesehatan fisik dan mental siswa.
+              </p>
+              <div
+                class="mt-6 pt-6 border-t border-surface-container flex items-center justify-between">
+                <span class="text-[10px] font-bold text-outline uppercase"
+                  >Lama Mengabdi: 15 Th</span
+                >
+                <button class="text-primary hover:underline text-xs font-bold">
+                  Profil Lengkap
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-transform hover:-translate-y-2">
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-surface-variant overflow-hidden">
+                  <div
+                    class="w-full h-full flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-3xl"
+                      >science</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-lg text-on-surface">
+                    Lani Wijaya, M.Si.
+                  </h3>
+                  <p class="text-xs text-on-surface-variant">
+                    Guru IPA &amp; Eksperimen
+                  </p>
+                </div>
+              </div>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Mengembangkan laboratorium alam di sekolah untuk pembelajaran
+                sains yang eksploratif dan menyenangkan.
+              </p>
+              <div
+                class="mt-6 pt-6 border-t border-surface-container flex items-center justify-between">
+                <span class="text-[10px] font-bold text-outline uppercase"
+                  >Lama Mengabdi: 8 Th</span
+                >
+                <button class="text-primary hover:underline text-xs font-bold">
+                  Profil Lengkap
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section
+        class="mt-24 px-8 py-20 bg-surface-container-low relative overflow-hidden">
+        <div class="absolute inset-0 batik-overlay"></div>
+        <div
+          class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-display font-extrabold text-primary mb-2">
+              100%
+            </div>
+            <p
+              class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">
+              Kualifikasi S1/S2
+            </p>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-extrabold text-primary mb-2">
+              1:20
+            </div>
+            <p
+              class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">
+              Rasio Guru:Siswa
+            </p>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-extrabold text-primary mb-2">
+              15+
+            </div>
+            <p
+              class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">
+              Publikasi Riset
+            </p>
+          </div>
+          <div>
+            <div class="text-4xl font-display font-extrabold text-primary mb-2">
+              24/7
+            </div>
+            <p
+              class="text-sm font-label font-bold text-on-surface-variant uppercase tracking-widest">
+              Pendampingan Konseling
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
 
-  document.addEventListener("DOMContentLoaded", function(){
-    setActive();
-    initHamburger();
-    initAccordion();
-  });
-})();
-</script>
-</body></html>
+    <footer
+      class="bg-surface-container-low w-full border-t border-outline-variant/30 mt-16">
+      <!-- SPMB Banner -->
+      <div class="bg-primary" id="spmb">
+        <div
+          class="max-w-7xl mx-auto px-4 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-white">
+            <div
+              class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0">
+              <span
+                class="material-symbols-outlined text-4xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >school</span
+              >
+            </div>
+            <div>
+              <p class="font-headline font-black text-xl md:text-2xl">
+                SPMB 2025/2026
+              </p>
+              <p class="text-primary-fixed/80 text-sm font-body">
+                Seleksi Penerimaan Murid Baru — Pendaftaran Dibuka Sekarang!
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 shrink-0">
+            <a
+              class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-fixed px-6 py-3 rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all shadow-lg"
+              href="#">
+              <span
+                class="material-symbols-outlined text-base"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >edit_note</span
+              >
+              Daftar Sekarang
+            </a>
+            <a
+              class="inline-flex items-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3 rounded-xl font-headline font-bold text-sm hover:bg-white/20 transition-all"
+              href="#">
+              <span class="material-symbols-outlined text-base">info</span>
+              Info Lengkap
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Footer columns -->
+      <div
+        class="max-w-7xl mx-auto px-4 md:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a class="flex items-center gap-3 mb-4" href="index.html">
+            <img
+              alt="Logo SDN Model"
+              class="h-12 w-12"
+              src="assets/logo-sd-model.png" />
+            <div
+              class="font-headline font-extrabold text-primary leading-tight">
+              <span class="block text-base">SD Negeri Model</span>
+              <span class="block text-xs font-medium text-on-surface-variant"
+                >Sleman</span
+              >
+            </div>
+          </a>
+          <p
+            class="font-body text-on-surface-variant text-sm mb-6 leading-relaxed">
+            Mewujudkan generasi cerdas, berkarakter, dan berwawasan global
+            melalui pendidikan unggul berbasis nilai Pancasila.
+          </p>
+          <div class="flex gap-3">
+            <a
+              aria-label="Website"
+              class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              href="#"
+              ><span class="material-symbols-outlined text-xl"
+                >language</span
+              ></a
+            >
+            <a
+              aria-label="Facebook"
+              class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              href="#"
+              ><span class="material-symbols-outlined text-xl">groups</span></a
+            >
+            <a
+              aria-label="YouTube"
+              class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              href="#"
+              ><span class="material-symbols-outlined text-xl"
+                >play_circle</span
+              ></a
+            >
+          </div>
+        </div>
+        <!-- Profil -->
+        <div>
+          <h4
+            class="font-headline font-bold text-on-surface mb-4 uppercase tracking-widest text-xs">
+            Profil Sekolah
+          </h4>
+          <ul class="space-y-3 font-body text-sm">
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="index.html"
+                >Sejarah Singkat</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="visi_misi.html"
+                >Visi &amp; Misi</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="kurikulum.html"
+                >Kurikulum</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="budaya_etika.html"
+                >Sekolah Ramah Anak</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="tenaga_pendidik.html"
+                >Tenaga Pendidik</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Layanan -->
+        <div>
+          <h4
+            class="font-headline font-bold text-on-surface mb-4 uppercase tracking-widest text-xs">
+            Layanan
+          </h4>
+          <ul class="space-y-3 font-body text-sm">
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="pengumuman.html"
+                >Pengumuman</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="galery.html"
+                >Galeri Kegiatan</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="literasi_digital.html"
+                >Perpustakaan Digital</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="layanan_informasi.html"
+                >Layanan Informasi</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-semibold"
+                href="#spmb"
+                >SPMB 2025</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Kontak -->
+        <div>
+          <h4
+            class="font-headline font-bold text-on-surface mb-4 uppercase tracking-widest text-xs">
+            Hubungi Kami
+          </h4>
+          <address
+            class="not-italic font-body text-sm text-on-surface-variant space-y-3">
+            <p class="flex items-start gap-2">
+              <span
+                class="material-symbols-outlined text-primary shrink-0 mt-0.5"
+                style="font-size: 18px"
+                >location_on</span
+              >
+              <span>Jl. Kolonel Sugiyono, Sleman, DI Yogyakarta 55511</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-primary shrink-0"
+                style="font-size: 18px"
+                >phone</span
+              >
+              <a class="hover:text-primary" href="tel:02741234567"
+                >(0274) 1234567</a
+              >
+            </p>
+            <p class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-primary shrink-0"
+                style="font-size: 18px"
+                >mail</span
+              >
+              <a
+                class="hover:text-primary"
+                href="mailto:info@sdnmodelsleman.sch.id"
+                >info@sdnmodelsleman.sch.id</a
+              >
+            </p>
+            <p class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-primary shrink-0"
+                style="font-size: 18px"
+                >schedule</span
+              >
+              <span>Senin–Jumat, 07.00–14.00 WIB</span>
+            </p>
+          </address>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div class="border-t border-outline-variant/30">
+        <div
+          class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs font-label text-on-surface-variant">
+          <p>
+            © 2025 SD Negeri Model Sleman. Terakreditasi A. Hak cipta
+            dilindungi.
+          </p>
+          <div class="flex gap-4">
+            <a class="hover:text-primary transition-colors" href="#"
+              >Kebijakan Privasi</a
+            >
+            <a class="hover:text-primary transition-colors" href="#"
+              >Syarat &amp; Ketentuan</a
+            >
+            <a class="hover:text-primary transition-colors" href="kontak.html"
+              >Peta Situs</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="sdn-nav-js">
+      (function () {
+        var M = {
+          "index.html": { t: "d", k: "beranda" },
+          "visi_misi.html": { t: "dd", k: "profil" },
+          "kurikulum.html": { t: "dd", k: "profil" },
+          "budaya_etika.html": { t: "dd", k: "profil" },
+          "tenaga_pendidik.html": { t: "dd", k: "sdm" },
+          "galery.html": { t: "d", k: "galeri" },
+          "kontak.html": { t: "d", k: "kontak" },
+          "pengumuman.html": { t: "d", k: "pengumuman" },
+          "layanan_informasi.html": { t: "dd", k: "lainnya" },
+          "literasi_digital.html": { t: "dd", k: "lainnya" },
+        };
+        function pg() {
+          return location.pathname.split("/").pop() || "index.html";
+        }
+        function setActive() {
+          var i = M[pg()] || { t: "d", k: "" };
+          document.querySelectorAll("[data-nav-active]").forEach(function (e) {
+            e.removeAttribute("data-nav-active");
+          });
+          var s =
+            i.t === "d"
+              ? "[data-nav-key='" + i.k + "']"
+              : "[data-nav-dropdown='" + i.k + "']";
+          document.querySelectorAll(s).forEach(function (e) {
+            e.setAttribute("data-nav-active", "1");
+          });
+        }
+        function initHamb() {
+          var b = document.getElementById("mob-menu-btn"),
+            m = document.getElementById("mobile-nav-menu");
+          if (!b || !m) return;
+          b.addEventListener("click", function (e) {
+            e.stopPropagation();
+            var o = m.classList.toggle("mob-open");
+            b.querySelector(".icon-menu").classList.toggle("hidden", o);
+            b.querySelector(".icon-close").classList.toggle("hidden", !o);
+          });
+          document.addEventListener("click", function (e) {
+            if (!m.contains(e.target) && !b.contains(e.target)) {
+              m.classList.remove("mob-open");
+              b.querySelector(".icon-menu").classList.remove("hidden");
+              b.querySelector(".icon-close").classList.add("hidden");
+            }
+          });
+        }
+        function initAcc() {
+          document.querySelectorAll("[data-mob-toggle]").forEach(function (b) {
+            b.addEventListener("click", function () {
+              var p = document.getElementById(
+                  b.getAttribute("data-mob-toggle"),
+                ),
+                c = b.querySelector(".mob-chevron");
+              if (!p) return;
+              p.classList.toggle("hidden");
+              if (c) c.classList.toggle("rotated");
+            });
+          });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          setActive();
+          initHamb();
+          initAcc();
+        });
+      })();
+    </script>
+  </body>
+</html>
