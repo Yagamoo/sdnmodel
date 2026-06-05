@@ -85,6 +85,9 @@
       };
     </script>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       .material-symbols-outlined {
         font-variation-settings:
           "FILL" 0,
@@ -136,8 +139,8 @@
         <a class="flex items-center gap-2.5 shrink-0 min-w-0" href="index.html">
           <img
             alt="Logo SDN Model Sleman"
-            class="h-12 w-12 shrink-0"
-            src="assets/logo-sd-model.png" />
+            class="h-9 w-9 shrink-0"
+            src="assets/logo-sd-model.png " />
           <div
             class="font-headline font-extrabold leading-tight text-primary hidden sm:block">
             <span class="block text-sm md:text-base">SD Negeri Model</span>
@@ -216,44 +219,12 @@
               >
             </div>
           </div>
-          <div class="relative group">
-            <button
-              class="flex items-center gap-0.5 px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
-              data-nav-dropdown="sdm">
-              SDM<span class="material-symbols-outlined" style="font-size: 16px"
-                >expand_more</span
-              >
-            </button>
-            <div
-              class="absolute left-0 top-full mt-1 w-48 bg-white shadow-xl rounded-xl border border-outline-variant/50 py-1.5 hidden group-hover:block z-50">
-              <a
-                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="tenaga_pendidik.html"
-                ><span class="material-symbols-outlined text-base">school</span
-                >Tenaga Pendidik</a
-              >
-              <a
-                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="tenaga_pendidik.html"
-                ><span class="material-symbols-outlined text-base">badge</span
-                >Kependidikan</a
-              >
-              <a
-                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="tenaga_pendidik.html"
-                ><span class="material-symbols-outlined text-base"
-                  >security</span
-                >Keamanan</a
-              >
-              <a
-                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="tenaga_pendidik.html"
-                ><span class="material-symbols-outlined text-base"
-                  >cleaning_services</span
-                >Kebersihan</a
-              >
-            </div>
-          </div>
+          <a
+            class="px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
+            data-nav-key="sdm"
+            href="tenaga_pendidik.html"
+            >SDM</a
+          >
           <a
             class="px-3 py-1.5 rounded-md hover:text-primary hover:bg-surface-container transition-colors"
             data-nav-key="galeri"
@@ -283,7 +254,7 @@
               >
             </button>
             <div
-              class="absolute right-0 top-full mt-1 w-48 bg-white shadow-xl rounded-xl border border-outline-variant/50 py-1.5 hidden group-hover:block z-50">
+              class="absolute right-0 top-full mt-1 w-56 bg-white shadow-xl rounded-xl border border-outline-variant/50 py-1.5 hidden group-hover:block z-50">
               <a
                 class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
                 href="literasi_digital.html"
@@ -293,33 +264,27 @@
               >
               <a
                 class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="layanan_informasi.html"
+                href="layanan_informasi.html#buku-tamu"
                 ><span class="material-symbols-outlined text-base">book</span
                 >Buku Tamu</a
               >
               <a
                 class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="layanan_informasi.html"
+                href="layanan_informasi.html#kalkulator"
                 ><span class="material-symbols-outlined text-base"
                   >calculate</span
                 >Kalkulator</a
               >
               <a
                 class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="layanan_informasi.html"
+                href="layanan_informasi.html#hymne-mars"
                 ><span class="material-symbols-outlined text-base"
                   >music_note</span
                 >Hymne &amp; Mars</a
               >
               <a
                 class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="layanan_informasi.html"
-                ><span class="material-symbols-outlined text-base">poll</span
-                >Polling</a
-              >
-              <a
-                class="flex items-center gap-2 px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
-                href="layanan_informasi.html"
+                href="layanan_informasi.html#lapor"
                 ><span class="material-symbols-outlined text-base"
                   >campaign</span
                 >Lapor</a
@@ -340,7 +305,7 @@
               "
               >school</span
             >
-            SPMB 2025
+            SPMB 2026
           </a>
           <button
             aria-label="Buka menu"
@@ -373,7 +338,7 @@
               style="font-variation-settings: &quot;FILL&quot; 1"
               >school</span
             >
-            Daftar SPMB 2025 — Pendaftaran Dibuka!
+            Daftar SPMB 2026 — Pendaftaran Dibuka!
           </a>
           <div class="space-y-0.5">
             <a
@@ -428,42 +393,12 @@
                 >
               </div>
             </div>
-            <div>
-              <button
-                class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
-                data-mob-toggle="mob-sdm">
-                <span>SDM</span
-                ><span
-                  class="material-symbols-outlined mob-chevron"
-                  style="font-size: 18px"
-                  >expand_more</span
-                >
-              </button>
-              <div
-                class="hidden pl-3 mt-0.5 space-y-0.5 border-l-2 border-primary/20 ml-3 mb-1"
-                id="mob-sdm">
-                <a
-                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="tenaga_pendidik.html"
-                  >Tenaga Pendidik</a
-                >
-                <a
-                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="tenaga_pendidik.html"
-                  >Kependidikan</a
-                >
-                <a
-                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="tenaga_pendidik.html"
-                  >Keamanan</a
-                >
-                <a
-                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="tenaga_pendidik.html"
-                  >Kebersihan</a
-                >
-              </div>
-            </div>
+            <a
+              class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
+              data-nav-key="sdm"
+              href="tenaga_pendidik.html"
+              >SDM</a
+            >
             <a
               class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
               data-nav-key="galeri"
@@ -503,27 +438,22 @@
                 >
                 <a
                   class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="layanan_informasi.html"
+                  href="layanan_informasi.html#buku-tamu"
                   >Buku Tamu</a
                 >
                 <a
                   class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="layanan_informasi.html"
+                  href="layanan_informasi.html#kalkulator"
                   >Kalkulator</a
                 >
                 <a
                   class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="layanan_informasi.html"
+                  href="layanan_informasi.html#hymne-mars"
                   >Hymne &amp; Mars</a
                 >
                 <a
                   class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="layanan_informasi.html"
-                  >Polling</a
-                >
-                <a
-                  class="block px-3 py-2 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container hover:text-primary"
-                  href="layanan_informasi.html"
+                  href="layanan_informasi.html#lapor"
                   >Lapor</a
                 >
               </div>
@@ -556,6 +486,7 @@
       <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
         <!-- Perpus Digital Card -->
         <div
+          id="perpustakaan"
           class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden group shadow-[0_12px_32px_rgba(25,28,30,0.06)] flex flex-col justify-between min-h-[320px]">
           <div
             class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none transition-transform duration-700 group-hover:scale-105"
@@ -599,6 +530,7 @@
         </div>
         <!-- Buku Tamu Card -->
         <div
+          id="buku-tamu"
           class="md:col-span-4 bg-surface-container-low rounded-xl p-8 relative shadow-[0_12px_32px_rgba(25,28,30,0.04)] flex flex-col h-full min-h-[320px]">
           <div
             class="bg-secondary/10 text-secondary p-3 rounded-lg mb-6 inline-flex self-start">
@@ -623,6 +555,7 @@
         </div>
         <!-- PPDB Kalkulator Card -->
         <div
+          id="kalkulator"
           class="md:col-span-5 bg-gradient-to-br from-primary to-primary-container rounded-xl p-8 text-on-primary shadow-[0_12px_32px_rgba(25,28,30,0.08)] relative overflow-hidden flex flex-col justify-between min-h-[280px]">
           <!-- Subtle pattern overlay -->
           <div
@@ -655,6 +588,7 @@
         </div>
         <!-- Lirik Hymne & Mars Card -->
         <div
+          id="hymne-mars"
           class="md:col-span-7 bg-surface-container-lowest rounded-xl p-0 relative flex flex-col md:flex-row overflow-hidden shadow-[0_12px_32px_rgba(25,28,30,0.06)] min-h-[280px]">
           <div
             class="p-8 flex flex-col justify-center flex-1 z-10 relative bg-surface-container-lowest/90 backdrop-blur-sm">
@@ -697,6 +631,7 @@
       </section>
       <!-- LAPOR Section (Full Width Editorial) -->
       <section
+        id="lapor"
         class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(25,28,30,0.04)]">
         <div class="grid grid-cols-1 lg:grid-cols-2">
           <div class="p-12 lg:p-16 flex flex-col justify-center">
@@ -816,7 +751,7 @@
             </div>
             <div>
               <p class="font-headline font-black text-xl md:text-2xl">
-                SPMB 2025/2026
+                SPMB 2026/2027
               </p>
               <p class="text-primary-fixed/80 text-sm font-body">
                 Seleksi Penerimaan Murid Baru — Pendaftaran Dibuka Sekarang!
@@ -852,7 +787,7 @@
             <img
               alt="Logo SDN Model"
               class="h-12 w-12"
-              src="assets/logo-sd-model.png" />
+              src="assets/logo-sd-model.png " />
             <div
               class="font-headline font-extrabold text-primary leading-tight">
               <span class="block text-base">SD Negeri Model</span>
@@ -974,7 +909,7 @@
               <a
                 class="text-on-surface-variant hover:text-primary transition-colors font-semibold"
                 href="#spmb"
-                >SPMB 2025</a
+                >SPMB 2026</a
               >
             </li>
           </ul>
@@ -1057,7 +992,7 @@
           "visi_misi.html": { t: "dd", k: "profil" },
           "kurikulum.html": { t: "dd", k: "profil" },
           "budaya_etika.html": { t: "dd", k: "profil" },
-          "tenaga_pendidik.html": { t: "dd", k: "sdm" },
+          "tenaga_pendidik.html": { t: "d", k: "sdm" },
           "galery.html": { t: "d", k: "galeri" },
           "kontak.html": { t: "d", k: "kontak" },
           "pengumuman.html": { t: "d", k: "pengumuman" },
