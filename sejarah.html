@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Beranda — SD Negeri Model Sleman</title>
+    <title>Sejarah — SD Negeri Model Sleman</title>
+    <meta
+      content="Sejarah berdiri dan perkembangan SD Negeri Model Sleman, sekolah unggulan berakreditasi A di Sleman, Yogyakarta."
+      name="description" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet" />
     <script id="tailwind-config">
       tailwind.config = {
@@ -72,9 +75,9 @@
               full: "9999px",
             },
             fontFamily: {
-              headline: ["Plus Jakarta Sans"],
-              body: ["Inter"],
-              label: ["Inter"],
+              headline: ["Plus Jakarta Sans", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              label: ["Inter", "sans-serif"],
             },
           },
         },
@@ -88,24 +91,20 @@
           "GRAD" 0,
           "opsz" 24;
       }
-      .tonal-transition {
-        background: linear-gradient(
-          180deg,
-          rgba(247, 249, 251, 0.5) 0%,
-          rgba(242, 244, 246, 0.5) 100%
-        );
+      /* Timeline */
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 28px;
+        bottom: -24px;
+        width: 2px;
+        background: linear-gradient(to bottom, #003fb1, #dbe1ff);
       }
-      .glass-hero {
-        backdrop-filter: blur(20px);
-        background: rgba(255, 255, 255, 0.7);
-      }
-      .text-shadow-sm {
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      .timeline-item:last-child::before {
+        display: none;
       }
     </style>
-    <meta
-      content="SD Negeri Model Sleman — Sekolah unggulan berakreditasi A di Sleman, Yogyakarta. Membentuk generasi cerdas, berkarakter, dan berprestasi."
-      name="description" />
     <style id="sdn-nav-styles">
       [data-nav-active="1"] {
         color: #003fb1 !important;
@@ -140,7 +139,8 @@
     </style>
   </head>
   <body
-    class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+    class="bg-surface text-on-surface font-body antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- ═══ NAVBAR ═══════════════════════════════════════════════════════ -->
     <header
       class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-xl shadow-sm border-b border-outline-variant/30 relative">
       <div
@@ -149,7 +149,7 @@
           <img
             alt="Logo SDN Model Sleman"
             class="h-9 w-9 shrink-0"
-            src="assets/logo-sd-model.png " />
+            src="assets/logo-sd-model.png" />
           <div
             class="font-headline font-extrabold leading-tight text-primary hidden sm:block">
             <span class="block text-sm md:text-base">SD Negeri Model</span>
@@ -305,7 +305,7 @@
         <div class="flex items-center gap-2 shrink-0">
           <a
             class="hidden md:inline-flex items-center gap-1.5 bg-secondary-container text-on-secondary-fixed px-4 py-2 rounded-lg font-headline font-bold text-sm hover:opacity-90 transition-all spmb-pulse shadow-sm"
-            href="#spmb">
+            href="index.html#spmb">
             <span
               class="material-symbols-outlined"
               style="
@@ -313,7 +313,8 @@
                 font-variation-settings: &quot;FILL&quot; 1;
               "
               >school</span
-            >SPMB 2026
+            >
+            SPMB 2026
           </a>
           <button
             aria-label="Buka menu"
@@ -332,13 +333,14 @@
           </button>
         </div>
       </div>
+      <!-- Mobile menu -->
       <div
         class="md:hidden absolute top-full left-0 w-full bg-white border-t border-outline-variant/30 shadow-2xl z-50 max-h-[80vh] overflow-y-auto"
         id="mobile-nav-menu">
         <div class="px-4 py-3">
           <a
             class="flex items-center gap-3 p-3 mb-3 bg-secondary-container rounded-xl font-headline font-bold text-sm text-on-secondary-fixed"
-            href="#spmb"
+            href="index.html#spmb"
             ><span
               class="material-symbols-outlined"
               style="font-variation-settings: &quot;FILL&quot; 1"
@@ -356,8 +358,8 @@
               <button
                 class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
                 data-mob-toggle="mob-profil">
-                <span>Profil</span
-                ><span
+                <span>Profil</span>
+                <span
                   class="material-symbols-outlined mob-chevron"
                   style="font-size: 18px"
                   >expand_more</span
@@ -426,8 +428,8 @@
               <button
                 class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors"
                 data-mob-toggle="mob-lainnya">
-                <span>Lainnya</span
-                ><span
+                <span>Lainnya</span>
+                <span
                   class="material-symbols-outlined mob-chevron"
                   style="font-size: 18px"
                   >expand_more</span
@@ -467,526 +469,371 @@
         </div>
       </div>
     </header>
-    <!-- TopNavBar -->
-    <!-- Footer -->
+
     <main class="pt-16 overflow-x-hidden">
       <!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
-
-      <!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
-      <section class="px-3 sm:px-4 md:px-6 pt-4 pb-2 max-w-7xl mx-auto">
-        <!-- Hero image card -->
-        <div
-          class="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
-          style="min-height: 240px; height: clamp(240px, 52vw, 540px)">
-          <!-- Foto latar -->
+      <section class="relative overflow-hidden">
+        <div class="relative h-[52vw] min-h-[280px] max-h-[540px]">
           <img
-            alt="Siswa SD Negeri Model Sleman"
+            alt="Gedung SD Negeri Model Sleman"
             class="absolute inset-0 w-full h-full object-cover object-center"
             loading="eager"
-            src="assets/img/index/hero_index.JPG" />
-          <!-- Overlay gradient: gelap di kiri-bawah, transparan di kanan-atas -->
+            src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1400&q=80" />
           <div
             class="absolute inset-0"
             style="
               background: linear-gradient(
                 135deg,
-                rgba(0, 18, 68, 0.82) 0%,
-                rgba(0, 30, 100, 0.55) 45%,
-                rgba(0, 0, 0, 0.1) 100%
+                rgba(0, 18, 68, 0.88) 0%,
+                rgba(0, 30, 100, 0.60) 50%,
+                rgba(0, 0, 0, 0.15) 100%
               );
             "></div>
-          <!-- Konten teks -->
           <div
-            class="absolute inset-0 flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-16 pt-0 pb-14 sm:pb-16 md:pb-6">
-            <div class="max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl">
-              <!-- Label -->
-              <span
-                class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 sm:mb-4">
-                <span
-                  class="material-symbols-outlined"
-                  style="
-                    font-size: 14px;
-                    font-variation-settings: &quot;FILL&quot; 1;
-                  "
-                  >stars</span
-                >
-                Sekolah Unggulan Terakreditasi A
-              </span>
-              <!-- Judul -->
-              <h1
-                class="font-headline font-extrabold text-white leading-tight tracking-tight drop-shadow text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-3 md:mb-4">
-                Masa Depan Gemilang<br />
-                <span class="text-secondary-container">Dimulai dari Sini.</span>
-              </h1>
-              <!-- Deskripsi — tersembunyi di HP kecil -->
-              <p
-                class="hidden sm:block text-white/85 text-sm md:text-base leading-relaxed mb-4 md:mb-6 max-w-md">
-                Bersama SD Negeri Model Sleman, kami membentuk generasi cerdas,
-                berkarakter, dan siap menghadapi tantangan masa depan bangsa.
-              </p>
-              <!-- Tombol CTA -->
-              <div class="flex flex-wrap gap-2 sm:gap-3">
-                <a
-                  class="inline-flex items-center gap-1.5 bg-secondary-container text-on-secondary-fixed px-4 py-2 sm:px-5 sm:py-2.5 md:px-7 md:py-3 rounded-xl font-headline font-bold text-xs sm:text-sm md:text-base shadow-lg hover:opacity-90 transition-all active:scale-95"
-                  href="#spmb">
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >edit_note</span
-                  >
-                  Daftar SPMB 2026
-                </a>
-                <a
-                  class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-7 md:py-3 rounded-xl font-headline font-bold text-xs sm:text-sm md:text-base border border-white/30 hover:bg-white/25 transition-all active:scale-95"
-                  href="visi_misi.html">
-                  <span class="material-symbols-outlined text-sm">explore</span>
-                  Profil Sekolah
-                </a>
-              </div>
+            class="absolute inset-0 flex flex-col justify-end px-6 sm:px-10 md:px-16 pb-10 md:pb-14 max-w-7xl mx-auto">
+            <!-- Breadcrumb -->
+            <nav class="flex items-center gap-1.5 text-white/60 text-xs mb-4">
+              <a href="index.html" class="hover:text-white transition-colors">Beranda</a>
+              <span class="material-symbols-outlined" style="font-size:14px">chevron_right</span>
+              <span class="text-white/80">Profil</span>
+              <span class="material-symbols-outlined" style="font-size:14px">chevron_right</span>
+              <span class="text-white font-semibold">Sejarah</span>
+            </nav>
+            <div
+              class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-fixed text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 w-fit">
+              <span class="material-symbols-outlined" style="font-size:14px; font-variation-settings:'FILL' 1">history_edu</span>
+              Sejarah Singkat
             </div>
-          </div>
-          <!-- Strip statistik — tampil di md ke atas, muncul di pojok kanan bawah -->
-          <div
-            class="hidden md:flex absolute bottom-0 right-0 rounded-tl-2xl overflow-hidden divide-x divide-outline-variant/30">
-            <div class="bg-white/90 backdrop-blur-md px-5 py-3 text-center">
-              <p
-                class="font-headline font-black text-xl text-primary leading-none">
-                45+
-              </p>
-              <p class="text-[11px] text-on-surface-variant mt-0.5 font-medium">
-                Guru Sertifikasi
-              </p>
-            </div>
-            <div class="bg-white/90 backdrop-blur-md px-5 py-3 text-center">
-              <p
-                class="font-headline font-black text-xl text-primary leading-none">
-                600+
-              </p>
-              <p class="text-[11px] text-on-surface-variant mt-0.5 font-medium">
-                Siswa Aktif
-              </p>
-            </div>
-            <div class="bg-white/90 backdrop-blur-md px-5 py-3 text-center">
-              <p
-                class="font-headline font-black text-xl text-primary leading-none">
-                A
-              </p>
-              <p class="text-[11px] text-on-surface-variant mt-0.5 font-medium">
-                Akreditasi
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Strip statistik mobile (di bawah gambar) -->
-        <div
-          class="flex md:hidden divide-x divide-outline-variant/50 mt-3 bg-white rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
-          <div class="flex-1 py-3 text-center">
-            <p
-              class="font-headline font-black text-lg text-primary leading-none">
-              45+
+            <h1
+              class="font-headline font-extrabold text-white leading-tight drop-shadow text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3">
+              Jejak Langkah<br />
+              <span class="text-secondary-container">Menuju Keunggulan</span>
+            </h1>
+            <p class="text-white/80 text-sm md:text-base max-w-xl leading-relaxed">
+              Perjalanan dua dekade SD Negeri Model Sleman dalam mendedikasikan diri untuk pendidikan berkualitas.
             </p>
-            <p class="text-[10px] text-on-surface-variant mt-0.5">Guru</p>
-          </div>
-          <div class="flex-1 py-3 text-center">
-            <p
-              class="font-headline font-black text-lg text-primary leading-none">
-              600+
-            </p>
-            <p class="text-[10px] text-on-surface-variant mt-0.5">Siswa</p>
-          </div>
-          <div class="flex-1 py-3 text-center">
-            <p
-              class="font-headline font-black text-lg text-primary leading-none">
-              A
-            </p>
-            <p class="text-[10px] text-on-surface-variant mt-0.5">Akreditasi</p>
-          </div>
-          <div class="flex-1 py-3 text-center">
-            <p
-              class="font-headline font-black text-lg text-primary leading-none">
-              25+
-            </p>
-            <p class="text-[10px] text-on-surface-variant mt-0.5">Tahun</p>
           </div>
         </div>
       </section>
 
-      <!-- ═══ LAYANAN CEPAT ════════════════════════════════════════════════ -->
-      <section class="px-4 md:px-6 py-10 max-w-7xl mx-auto">
-        <h2
-          class="font-headline font-extrabold text-xl md:text-2xl text-on-surface mb-6">
-          Layanan &amp; Informasi
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <a
-            class="group bg-white border border-outline-variant rounded-2xl p-5 flex flex-col gap-3 hover:border-primary hover:shadow-lg transition-all duration-300"
-            href="kurikulum.html">
-            <span
-              class="material-symbols-outlined text-3xl text-primary"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >menu_book</span
-            >
-            <div>
-              <h3 class="font-headline font-bold text-base text-on-surface">
-                Kurikulum
-              </h3>
-              <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
-                Merdeka Belajar berbasis karakter
-              </p>
+      <!-- ═══ KONTEN SEJARAH ═══════════════════════════════════════════════ -->
+      <div class="max-w-7xl mx-auto px-4 md:px-8">
+
+        <!-- Ringkasan Statistik -->
+        <section class="py-10 md:py-14">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="bg-white rounded-2xl p-6 text-center border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-4xl text-primary mb-2 block" style="font-variation-settings:'FILL' 1">calendar_today</span>
+              <p class="font-headline font-black text-3xl text-primary">2005</p>
+              <p class="text-on-surface-variant text-xs mt-1 font-medium">Tahun Berdiri</p>
             </div>
-            <span
-              class="text-primary text-xs font-bold flex items-center gap-1 mt-auto"
-              >Selengkapnya
-              <span
-                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
-                >arrow_forward</span
-              ></span
-            >
-          </a>
-          <div
-            class="group bg-secondary-fixed rounded-2xl p-5 flex flex-col gap-3 hover:shadow-lg transition-all cursor-pointer">
-            <span
-              class="material-symbols-outlined text-3xl text-on-secondary-fixed"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >family_restroom</span
-            >
-            <div>
-              <h3
-                class="font-headline font-bold text-base text-on-secondary-fixed">
-                Portal Orang Tua
-              </h3>
-              <p
-                class="text-xs text-on-secondary-fixed-variant mt-0.5 leading-relaxed">
-                Pantau perkembangan anak Anda
-              </p>
+            <div class="bg-white rounded-2xl p-6 text-center border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-4xl text-secondary mb-2 block" style="font-variation-settings:'FILL' 1">people</span>
+              <p class="font-headline font-black text-3xl text-secondary">600+</p>
+              <p class="text-on-surface-variant text-xs mt-1 font-medium">Siswa Aktif</p>
             </div>
-            <a
-              class="mt-auto text-center bg-on-secondary-fixed text-secondary-fixed text-xs font-bold px-3 py-2 rounded-lg hover:opacity-90 transition-opacity"
-              href="#"
-              >Masuk Portal</a
-            >
+            <div class="bg-white rounded-2xl p-6 text-center border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-4xl text-tertiary mb-2 block" style="font-variation-settings:'FILL' 1">school</span>
+              <p class="font-headline font-black text-3xl text-tertiary">45+</p>
+              <p class="text-on-surface-variant text-xs mt-1 font-medium">Guru Sertifikasi</p>
+            </div>
+            <div class="bg-primary rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+              <span class="material-symbols-outlined text-4xl text-white mb-2 block" style="font-variation-settings:'FILL' 1">verified</span>
+              <p class="font-headline font-black text-3xl text-white">A</p>
+              <p class="text-primary-fixed text-xs mt-1 font-medium">Akreditasi BAN-S/M</p>
+            </div>
           </div>
-          <a
-            class="group bg-surface-container-high rounded-2xl p-5 flex flex-col gap-3 hover:bg-surface-dim transition-all"
-            href="pengumuman.html">
-            <span
-              class="material-symbols-outlined text-3xl text-primary"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >event_upcoming</span
-            >
+        </section>
+
+        <!-- Narasi Sejarah -->
+        <section class="pb-12 md:pb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
-              <h3 class="font-headline font-bold text-base text-on-surface">
-                Kalender Sekolah
-              </h3>
-              <p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">
-                Jadwal ujian, libur, dan kegiatan
-              </p>
-            </div>
-            <span
-              class="text-primary text-xs font-bold flex items-center gap-1 mt-auto"
-              >Lihat Jadwal
-              <span
-                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
-                >chevron_right</span
-              ></span
-            >
-          </a>
-          <a
-            class="group bg-primary rounded-2xl p-5 flex flex-col gap-3 hover:bg-primary-container transition-all"
-            href="#spmb">
-            <span
-              class="material-symbols-outlined text-3xl text-white"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >how_to_reg</span
-            >
-            <div>
-              <h3 class="font-headline font-bold text-base text-white">
-                SPMB 2026
-              </h3>
-              <p class="text-xs text-primary-fixed mt-0.5 leading-relaxed">
-                Pendaftaran siswa baru dibuka
-              </p>
-            </div>
-            <span
-              class="mt-auto text-center bg-secondary-container text-on-secondary-fixed text-xs font-bold px-3 py-2 rounded-lg hover:opacity-90 transition-opacity"
-              >Daftar Sekarang</span
-            >
-          </a>
-        </div>
-      </section>
-      <!-- ═══ BERITA TERBARU ═══════════════════════════════════════════════ -->
-      <section
-        class="px-4 md:px-6 py-10 bg-surface-container-low/50 border-y border-outline-variant/30">
-        <div class="max-w-7xl mx-auto">
-          <div class="flex items-center justify-between mb-6">
-            <div>
-              <h2
-                class="font-headline font-extrabold text-xl md:text-3xl text-on-surface">
-                Berita &amp; Pengumuman
+              <div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+                <span class="material-symbols-outlined" style="font-size:14px">auto_stories</span>
+                Latar Belakang
+              </div>
+              <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-on-surface tracking-tight mb-4 leading-tight">
+                Bermula dari Sebuah<br/>
+                <span class="text-primary">Visi yang Besar</span>
               </h2>
-              <p class="text-on-surface-variant text-sm mt-1">
-                Informasi terkini dari lingkungan sekolah
-              </p>
+              <div class="w-16 h-1 bg-gradient-to-r from-primary to-primary-container rounded-full mb-6"></div>
+              <div class="space-y-4 text-on-surface-variant leading-relaxed text-sm md:text-base">
+                <p>
+                  SD Negeri Model Sleman berdiri pada tahun <strong class="text-on-surface">2005</strong> atas inisiatif Pemerintah Kabupaten Sleman yang ingin menghadirkan sekolah dasar percontohan (model) dengan standar kualitas tinggi sebagai rujukan bagi sekolah-sekolah lain di wilayahnya.
+                </p>
+                <p>
+                  Dengan dukungan penuh dari Dinas Pendidikan Kabupaten Sleman, sekolah ini dirancang secara khusus — mulai dari infrastruktur fisik, perekrutan tenaga pendidik pilihan, hingga penyusunan kurikulum yang melampaui standar nasional pada masanya.
+                </p>
+                <p>
+                  Pada tahun pertama beroperasi, SD Negeri Model Sleman menerima angkatan perdananya dengan antusiasme luar biasa dari masyarakat. Kepercayaan ini terus tumbuh dari tahun ke tahun, menjadikan sekolah ini salah satu yang paling diminati di Kabupaten Sleman.
+                </p>
+              </div>
             </div>
-            <a
-              class="hidden md:flex items-center gap-1 text-primary font-bold text-sm hover:gap-2 transition-all group"
-              href="pengumuman.html">
-              Lihat Semua
-              <span
-                class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform"
-                >arrow_forward</span
-              >
-            </a>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Card 1 -->
-            <a
-              class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-outline-variant/40 flex flex-col"
-              href="pengumuman.html">
-              <div class="aspect-video overflow-hidden">
+            <div class="relative">
+              <div class="absolute -inset-4 bg-primary/5 rounded-3xl blur-3xl z-0"></div>
+              <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  alt="Prestasi siswa SDN Model"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt="Sejarah awal SD Negeri Model Sleman"
+                  class="w-full object-cover aspect-[4/3]"
                   loading="lazy"
-                  src="assets/img/index/lomba-1.JPG" />
+                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-5">
+                  <p class="text-white text-sm font-medium">Gedung SDN Model Sleman, awal berdiri</p>
+                  <p class="text-white/70 text-xs">Dokumentasi Arsip Sekolah, 2005</p>
+                </div>
               </div>
-              <div class="p-5 md:p-7 flex flex-col flex-1">
-                <span
-                  class="text-[10px] font-black text-secondary uppercase tracking-[0.15em] bg-secondary-fixed px-3 py-1 rounded-full w-fit mb-3"
-                  >Prestasi</span
-                >
-                <h4
-                  class="text-base md:text-lg font-headline font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">
-                  Pemenang Olimpiade Sains Nasional 2024
-                </h4>
-                <p
-                  class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 flex-1">
-                  Siswa SD Negeri Model meraih medali emas dalam kompetisi sains
-                  tingkat nasional yang diadakan di Jakarta.
-                </p>
-                <span class="mt-4 text-xs text-outline flex items-center gap-1"
-                  ><span class="material-symbols-outlined text-sm"
-                    >calendar_today</span
-                  >
-                  15 Juni 2024</span
-                >
-              </div>
-            </a>
-            <!-- Card 2 -->
-            <a
-              class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-outline-variant/40 flex flex-col"
-              href="pengumuman.html">
-              <div class="aspect-video overflow-hidden">
-                <img
-                  alt="Festival budaya SDN Model"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                  src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&amp;fit=crop&amp;w=800&amp;h=500&amp;q=80" />
-              </div>
-              <div class="p-5 md:p-7 flex flex-col flex-1">
-                <span
-                  class="text-[10px] font-black text-tertiary uppercase tracking-[0.15em] bg-tertiary-fixed px-3 py-1 rounded-full w-fit mb-3"
-                  >Budaya</span
-                >
-                <h4
-                  class="text-base md:text-lg font-headline font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">
-                  Festival Budaya Nusantara SD Model 2024
-                </h4>
-                <p
-                  class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 flex-1">
-                  Merayakan keberagaman budaya Indonesia melalui seni tari
-                  tradisional dan pameran kuliner Nusantara.
-                </p>
-                <span class="mt-4 text-xs text-outline flex items-center gap-1"
-                  ><span class="material-symbols-outlined text-sm"
-                    >calendar_today</span
-                  >
-                  28 Mei 2024</span
-                >
-              </div>
-            </a>
+            </div>
           </div>
-          <div class="mt-5 flex md:hidden justify-center">
-            <a
-              class="inline-flex items-center gap-2 text-primary font-bold text-sm border border-primary/30 px-5 py-2.5 rounded-xl hover:bg-surface-container transition-colors"
-              href="pengumuman.html">
-              Lihat Semua Berita
-              <span class="material-symbols-outlined text-lg"
-                >arrow_forward</span
-              >
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- ═══ KALENDER AKADEMIK ════════════════════════════════════════════ -->
-      <section class="px-4 md:px-6 py-12 max-w-7xl mx-auto">
-        <div
-          class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
-          <div>
-            <h2
-              class="font-headline font-extrabold text-xl md:text-3xl text-on-surface">
-              Kalender Akademik
+        </section>
+
+        <!-- Timeline Sejarah -->
+        <section class="pb-14 md:pb-20">
+          <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+              <span class="material-symbols-outlined" style="font-size:14px">timeline</span>
+              Linimasa
+            </div>
+            <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-on-surface tracking-tight">
+              Perjalanan Dua Dekade
             </h2>
-            <p class="text-on-surface-variant text-sm mt-1">
-              Jadwal kegiatan penting tahun ajaran 2024/2025
+            <p class="text-on-surface-variant text-base mt-2 max-w-xl mx-auto">
+              Tonggak-tonggak penting yang membentuk SDN Model Sleman menjadi sekolah unggulan saat ini.
             </p>
           </div>
-          <a
-            class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all group"
-            href="pengumuman.html">
-            Lihat Semua
-            <span
-              class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform"
-              >arrow_forward</span
-            >
-          </a>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-          <div
-            class="group flex flex-col p-6 bg-white rounded-2xl border border-outline-variant shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <div class="flex items-center gap-4 mb-5">
-              <div
-                class="flex flex-col items-center bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-white transition-colors min-w-[56px]">
-                <span class="text-2xl font-headline font-black">14</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider"
-                  >Okt</span
-                >
+
+          <div class="max-w-3xl mx-auto">
+            <div class="relative pl-10 space-y-0">
+
+              <!-- Item 2005 -->
+              <div class="timeline-item relative pb-10">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">flag</span>
+                </div>
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm p-5 md:p-6 ml-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2005</span>
+                    <h3 class="font-headline font-bold text-on-surface text-base">Pendirian Sekolah</h3>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    SD Negeri Model Sleman resmi berdiri dan beroperasi sebagai sekolah percontohan di Kabupaten Sleman. Angkatan pertama diterima dengan penuh semangat oleh para pendiri dan tenaga pendidik pilihan.
+                  </p>
+                </div>
               </div>
-              <div>
-                <p class="font-bold text-on-surface text-sm">
-                  Pertemuan Wali Murid
-                </p>
-                <p class="text-xs text-on-surface-variant">Senin, 2024</p>
+
+              <!-- Item 2008 -->
+              <div class="timeline-item relative pb-10">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-secondary flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">emoji_events</span>
+                </div>
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm p-5 md:p-6 ml-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">2008</span>
+                    <h3 class="font-headline font-bold text-on-surface text-base">Prestasi Pertama</h3>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    Siswa SDN Model Sleman meraih prestasi pertamanya di tingkat kabupaten dalam lomba olimpiade sains dan matematika. Ini menjadi bukti awal bahwa visi sekolah unggulan mulai terwujud.
+                  </p>
+                </div>
               </div>
+
+              <!-- Item 2011 -->
+              <div class="timeline-item relative pb-10">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-tertiary flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">verified</span>
+                </div>
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm p-5 md:p-6 ml-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-tertiary text-white text-xs font-bold px-3 py-1 rounded-full">2011</span>
+                    <h3 class="font-headline font-bold text-on-surface text-base">Akreditasi "A" Perdana</h3>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    Sekolah berhasil meraih akreditasi nilai "A" dari Badan Akreditasi Nasional Sekolah/Madrasah (BAN-S/M) untuk pertama kalinya, mengukuhkan posisinya sebagai salah satu sekolah terbaik di Sleman.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2015 -->
+              <div class="timeline-item relative pb-10">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">computer</span>
+                </div>
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm p-5 md:p-6 ml-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2015</span>
+                    <h3 class="font-headline font-bold text-on-surface text-base">Digitalisasi Kelas</h3>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    Program digitalisasi kelas diluncurkan, mencakup pengadaan laboratorium komputer, LCD proyektor di setiap ruang belajar, dan penerapan media pembelajaran berbasis teknologi. SDN Model menjadi pelopor di antara SD negeri di Sleman.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2019 -->
+              <div class="timeline-item relative pb-10">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-secondary flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">child_friendly</span>
+                </div>
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm p-5 md:p-6 ml-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">2019</span>
+                    <h3 class="font-headline font-bold text-on-surface text-base">Sekolah Ramah Anak</h3>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    SDN Model Sleman dinobatkan sebagai Sekolah Ramah Anak (SRA) oleh Dinas Pemberdayaan Perempuan Kabupaten Sleman. Program ini mencerminkan komitmen sekolah terhadap lingkungan belajar yang aman, nyaman, dan bebas kekerasan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2022 -->
+              <div class="timeline-item relative pb-10">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-tertiary flex items-center justify-center shadow-lg">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">menu_book</span>
+                </div>
+                <div class="bg-white rounded-2xl border border-outline-variant shadow-sm p-5 md:p-6 ml-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-tertiary text-white text-xs font-bold px-3 py-1 rounded-full">2022</span>
+                    <h3 class="font-headline font-bold text-on-surface text-base">Implementasi Kurikulum Merdeka</h3>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    SDN Model Sleman menjadi salah satu sekolah penggerak pertama di Sleman yang mengimplementasikan Kurikulum Merdeka (Merdeka Belajar) secara penuh, mengedepankan pendekatan pembelajaran yang berpusat pada murid.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2025 -->
+              <div class="timeline-item relative">
+                <div class="absolute left-0 top-1 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-lg ring-4 ring-primary-fixed">
+                  <span class="material-symbols-outlined text-white" style="font-size:16px; font-variation-settings:'FILL' 1">stars</span>
+                </div>
+                <div class="bg-primary rounded-2xl shadow-lg p-5 md:p-6 ml-4">
+                  <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-block bg-secondary-container text-on-secondary-fixed text-xs font-bold px-3 py-1 rounded-full">2025 — Kini</span>
+                    <h3 class="font-headline font-bold text-white text-base">Masa Depan yang Cerah</h3>
+                  </div>
+                  <p class="text-primary-fixed/90 text-sm leading-relaxed">
+                    Memasuki dua dekade, SDN Model Sleman kini memiliki lebih dari 600 siswa aktif, 45+ tenaga pendidik bersertifikat, dan terus mempertahankan akreditasi "A". Sekolah terus berinovasi dalam pendidikan untuk menyiapkan generasi emas Indonesia.
+                  </p>
+                </div>
+              </div>
+
             </div>
-            <p
-              class="text-sm text-on-surface-variant flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-base text-primary"
-                >schedule</span
-              >
-              08.00 – 14.00 WIB
-            </p>
-            <button
-              class="mt-4 w-fit text-primary font-bold text-xs hover:underline underline-offset-4">
-              + Tambah ke Kalender
-            </button>
           </div>
-          <div
-            class="group flex flex-col p-6 bg-white rounded-2xl border border-outline-variant shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <div class="flex items-center gap-4 mb-5">
-              <div
-                class="flex flex-col items-center bg-secondary-fixed text-on-secondary-fixed px-4 py-2 rounded-xl group-hover:bg-secondary group-hover:text-white transition-colors min-w-[56px]">
-                <span class="text-2xl font-headline font-black">22</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider"
-                  >Okt</span
-                >
+        </section>
+
+        <!-- Pencapaian & Penghargaan -->
+        <section class="pb-14 md:pb-20">
+          <div class="bg-surface-container-low rounded-3xl p-6 md:p-10 border border-outline-variant/40">
+            <div class="text-center mb-10">
+              <div class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+                <span class="material-symbols-outlined" style="font-size:14px; font-variation-settings:'FILL' 1">workspace_premium</span>
+                Penghargaan & Pengakuan
               </div>
-              <div>
-                <p class="font-bold text-on-surface text-sm">
-                  Kunjungan Belajar
-                </p>
-                <p class="text-xs text-on-surface-variant">Selasa, 2024</p>
-              </div>
-            </div>
-            <p
-              class="text-sm text-on-surface-variant flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-base text-primary"
-                >location_on</span
-              >
-              Museum Sains Jakarta
-            </p>
-            <button
-              class="mt-4 w-fit text-primary font-bold text-xs hover:underline underline-offset-4">
-              Unduh Surat Izin
-            </button>
-          </div>
-          <div
-            class="group flex flex-col p-6 bg-white rounded-2xl border border-outline-variant shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all">
-            <div class="flex items-center gap-4 mb-5">
-              <div
-                class="flex flex-col items-center bg-tertiary-fixed text-on-tertiary-fixed px-4 py-2 rounded-xl group-hover:bg-tertiary group-hover:text-white transition-colors min-w-[56px]">
-                <span class="text-2xl font-headline font-black">02</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider"
-                  >Nov</span
-                >
-              </div>
-              <div>
-                <p class="font-bold text-on-surface text-sm">
-                  Workshop Hari Batik
-                </p>
-                <p class="text-xs text-on-surface-variant">Sabtu, 2024</p>
-              </div>
-            </div>
-            <p
-              class="text-sm text-on-surface-variant flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-base text-primary"
-                >palette</span
-              >
-              Ruang Seni Sekolah
-            </p>
-            <button
-              class="mt-4 w-fit text-primary font-bold text-xs hover:underline underline-offset-4">
-              Daftar Kegiatan
-            </button>
-          </div>
-        </div>
-      </section>
-      <!-- ═══ CTA BANNER ════════════════════════════════════════════════════ -->
-      <section class="px-4 md:px-6 pb-10">
-        <div
-          class="max-w-7xl mx-auto bg-primary rounded-2xl md:rounded-3xl overflow-hidden relative shadow-2xl">
-          <div
-            class="absolute inset-0 opacity-10 pointer-events-none"
-            style="
-              background-image: radial-gradient(
-                circle at 2px 2px,
-                white 1px,
-                transparent 0
-              );
-              background-size: 36px 36px;
-            "></div>
-          <div
-            class="relative px-6 md:px-16 py-12 md:py-20 flex flex-col md:flex-row md:items-center gap-8">
-            <div class="flex-1">
-              <p
-                class="text-secondary-container font-headline font-bold text-sm uppercase tracking-widest mb-2">
-                SPMB 2026/2027
-              </p>
-              <h2
-                class="text-white font-headline font-black text-2xl md:text-4xl lg:text-5xl mb-3 leading-tight">
-                Wujudkan Masa Depan<br />Terbaik Anak Anda.
+              <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-on-surface tracking-tight">
+                Bukti Nyata Keunggulan
               </h2>
-              <p
-                class="text-primary-fixed/80 text-sm md:text-base max-w-xl font-medium leading-relaxed">
-                Pendaftaran Seleksi Penerimaan Murid Baru Tahun Ajaran 2026/2027
-                kini telah dibuka. Tempat terbatas — segera daftarkan
-                putra-putri Anda.
-              </p>
             </div>
-            <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
-              <a
-                class="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-fixed px-8 py-4 rounded-xl font-headline font-bold text-base hover:opacity-90 transition-all shadow-xl active:scale-95"
-                href="#spmb">
-                <span
-                  class="material-symbols-outlined"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >edit_note</span
-                >
-                Daftar Sekarang
-              </a>
-              <a
-                class="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-headline font-bold text-base hover:bg-white/20 transition-all active:scale-95"
-                href="visi_misi.html">
-                <span class="material-symbols-outlined">info</span>
-                Panduan SPMB
-              </a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div class="bg-white rounded-2xl p-5 border border-outline-variant shadow-sm flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-secondary" style="font-size:20px; font-variation-settings:'FILL' 1">emoji_events</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface text-sm">Juara 1 OSN Tingkat Provinsi</p>
+                  <p class="text-on-surface-variant text-xs mt-1">Bidang Matematika, 2023</p>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-5 border border-outline-variant shadow-sm flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-primary" style="font-size:20px; font-variation-settings:'FILL' 1">verified</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface text-sm">Akreditasi "A" BAN-S/M</p>
+                  <p class="text-on-surface-variant text-xs mt-1">Dipertahankan sejak 2011</p>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-5 border border-outline-variant shadow-sm flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-tertiary" style="font-size:20px; font-variation-settings:'FILL' 1">child_care</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface text-sm">Sekolah Ramah Anak (SRA)</p>
+                  <p class="text-on-surface-variant text-xs mt-1">Kategori Pratama, 2019</p>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-5 border border-outline-variant shadow-sm flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-secondary" style="font-size:20px; font-variation-settings:'FILL' 1">local_library</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface text-sm">Sekolah Penggerak</p>
+                  <p class="text-on-surface-variant text-xs mt-1">Kemendikbudristek, 2022</p>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-5 border border-outline-variant shadow-sm flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-primary" style="font-size:20px; font-variation-settings:'FILL' 1">military_tech</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface text-sm">Lomba FLS2N Tari Nasional</p>
+                  <p class="text-on-surface-variant text-xs mt-1">Finalis Tingkat Nasional, 2022</p>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-5 border border-outline-variant shadow-sm flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-tertiary" style="font-size:20px; font-variation-settings:'FILL' 1">eco</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface text-sm">Sekolah Adiwiyata</p>
+                  <p class="text-on-surface-variant text-xs mt-1">Tingkat Kabupaten, 2021</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <!-- CTA ke halaman lain -->
+        <section class="pb-16">
+          <div class="bg-primary rounded-3xl overflow-hidden relative shadow-2xl">
+            <div
+              class="absolute inset-0 opacity-10 pointer-events-none"
+              style="
+                background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+                background-size: 36px 36px;
+              "></div>
+            <div class="relative px-6 md:px-14 py-10 md:py-14 flex flex-col md:flex-row md:items-center gap-8">
+              <div class="flex-1">
+                <p class="text-secondary-container font-headline font-bold text-sm uppercase tracking-widest mb-2">Pelajari Lebih Lanjut</p>
+                <h2 class="text-white font-headline font-black text-2xl md:text-3xl mb-2 leading-tight">
+                  Kenali Visi & Misi<br/>SD Negeri Model Sleman
+                </h2>
+                <p class="text-primary-fixed/80 text-sm max-w-lg leading-relaxed">
+                  Sejarah yang kuat menjadi fondasi bagi visi dan misi kami untuk terus berkembang dan berinovasi demi generasi penerus bangsa.
+                </p>
+              </div>
+              <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+                <a
+                  class="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-fixed px-7 py-3.5 rounded-xl font-headline font-bold text-sm hover:opacity-90 transition-all shadow-lg"
+                  href="visi_misi.html">
+                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">flag</span>
+                  Visi &amp; Misi
+                </a>
+                <a
+                  class="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-7 py-3.5 rounded-xl font-headline font-bold text-sm hover:bg-white/20 transition-all"
+                  href="tenaga_pendidik.html">
+                  <span class="material-symbols-outlined">groups</span>
+                  Tenaga Pendidik
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </main>
-    <footer
-      class="bg-surface-container-low w-full border-t border-outline-variant/30">
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+    <footer class="bg-surface-container-low w-full border-t border-outline-variant/30">
       <div class="bg-primary" id="spmb">
         <div
           class="max-w-7xl mx-auto px-4 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -1011,7 +858,7 @@
           <div class="flex flex-wrap gap-3 shrink-0">
             <a
               class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-fixed px-6 py-3 rounded-xl font-headline font-bold text-sm hover:opacity-90 shadow-lg"
-              href="#"
+              href="index.html#spmb"
               ><span
                 class="material-symbols-outlined text-base"
                 style="font-variation-settings: &quot;FILL&quot; 1"
@@ -1020,7 +867,7 @@
             >
             <a
               class="inline-flex items-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3 rounded-xl font-headline font-bold text-sm hover:bg-white/20"
-              href="#"
+              href="index.html#spmb"
               ><span class="material-symbols-outlined text-base">info</span>Info
               Lengkap</a
             >
@@ -1034,11 +881,11 @@
             <img
               alt="Logo SDN Model"
               class="h-12 w-12"
-              src="assets/logo-sd-model.png " />
+              src="assets/logo-sd-model.png" />
             <div
               class="font-headline font-extrabold text-primary leading-tight">
-              <span class="block text-base">SD Negeri Model</span
-              ><span class="block text-xs font-medium text-on-surface-variant"
+              <span class="block text-base">SD Negeri Model</span>
+              <span class="block text-xs font-medium text-on-surface-variant"
                 >Sleman</span
               >
             </div>
@@ -1050,23 +897,22 @@
           </p>
           <div class="flex gap-3">
             <a
+              aria-label="Website"
               class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
               href="#"
-              ><span class="material-symbols-outlined text-xl"
-                >language</span
-              ></a
+              ><span class="material-symbols-outlined text-xl">language</span></a
             >
             <a
+              aria-label="Facebook"
               class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
               href="#"
               ><span class="material-symbols-outlined text-xl">groups</span></a
             >
             <a
+              aria-label="YouTube"
               class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
               href="#"
-              ><span class="material-symbols-outlined text-xl"
-                >play_circle</span
-              ></a
+              ><span class="material-symbols-outlined text-xl">play_circle</span></a
             >
           </div>
         </div>
@@ -1150,7 +996,7 @@
             <li>
               <a
                 class="text-on-surface-variant hover:text-primary transition-colors font-semibold"
-                href="#spmb"
+                href="index.html#spmb"
                 >SPMB 2026</a
               >
             </li>
@@ -1214,6 +1060,7 @@
         </div>
       </div>
     </footer>
+
     <script id="sdn-nav-js">
       (function () {
         var M = {
